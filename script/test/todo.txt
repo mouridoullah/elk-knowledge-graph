@@ -1,0 +1,19 @@
+- voir de plus pres dbpedia
+- voir comment db peut s'articuler avec te travail deja fait
+- apres avoir consideré dbpedia qu'apporterait wikidata
+- comment profiter des predicat dbo de dbpedia
+- l'ontologie lié a dbpedia (dbo)
+- relire les ontologie dans gandon
+- creer un jeu de donnée
+- faire une petite ontologie sur dbpedia
+- foaf
+
+
+
+- generalisation (wikipe, wikidata, dbpedia) et (contenu et resumé)
+- passage de wikipedia vers dbpedia 
+
+
+- probeleme d'abstraction
+
+- rechercher une ontologi sur les ville 

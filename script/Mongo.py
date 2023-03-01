@@ -8,15 +8,15 @@ db = client['dbDocument']
 collection = db['test']
 
 folder_path = {'fr':"/home/mandiaye/LORIA/dataPdf",
-               'ang':"/home/mandiaye/LORIA/pdfs-master/essaie"}
+               'ang':"/home/mandiaye/LORIA/pdfs-master/essaie/dodo"}
 
-file_names = os.listdir(folder_path['fr'])
+file_names = os.listdir(folder_path['ang'])
 
 
 # loop through the file names
 for file_name in file_names:
     # construct the full path to the file
-    file_path = os.path.join(folder_path['fr'], file_name)
+    file_path = os.path.join(folder_path['ang'], file_name)
     
     # parse the file with Tika
     parsed = parser.from_file(file_path)

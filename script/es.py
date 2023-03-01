@@ -167,3 +167,6 @@ if __name__ == "__main__":
 # MATCH ()-[r]-() RETURN r ORDER BY size(r.keywords) DESC
 # MATCH (n)-[r]->(m) WHERE 'web' in r.keywords RETURN *
 # MATCH (n) WHERE n.titre in ['strong', 'especially', 'wall', 'pull', 'box', 'ever', 'respond'] return *
+
+
+# /home/mandiaye/anaconda3/bin/python -m pip install wikipedia-api
