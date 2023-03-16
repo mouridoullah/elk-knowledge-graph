@@ -1,0 +1,11 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix city: <http://example.org/city/> .
+@prefix loria: <http://exemple.org/ontology/loria/> .
+@prefix pp: <http://example.org/people/> .
+
+loria:nearTo a owl:SymmetricProperty .
+loria:nearTo rdfs:domain dbo:PopulatedPlace .
+loria:nearTo rdfs:range dbo:PopulatedPlace .
+city:Paris loria:nearTo city:Versailles .

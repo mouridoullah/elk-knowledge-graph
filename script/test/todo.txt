@@ -40,61 +40,6 @@ des requets plus soft possibles
 
 comment chercher de facon efficace des complement d'inf
 
-
-
-SELECT ?paysLabel ?abstract ?superficie ?coordinates ?population ?langueLabel ?link (GROUP_CONCAT(?placeLabel; separator=", ") as ?aeroports)
-WHERE {{
-  {{
-    wd:{city_id} wdt:P1082 ?population; wdt:P17 ?pays; wdt:P2046 ?superficie; wdt:P625 ?coordinates.
-    OPTIONAL {{ wd:{city_id} wdt:P2936 ?langue.}}
-    OPTIONAL {{ wd:{city_id} wdt:P856 ?link. }}
-    OPTIONAL {{
-      wd:{city_id} schema:description ?abstract.
-      FILTER (lang(?abstract) = "fr")
-    }}
-    SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
-  }}
-  UNION
-  {{
-    SELECT ?placeLabel
-    WHERE {{
-      wd:{city_id} wdt:P625 ?loc . 
-      SERVICE wikibase:around {{
-        ?place wdt:P625 ?location . 
-        bd:serviceParam wikibase:center ?loc . 
-        bd:serviceParam wikibase:radius "100" . 
-        bd:serviceParam wikibase:distance ?dist.
-      }}
-      FILTER EXISTS {{
-        # Is an airport
-        ?place wdt:P31/wdt:P279* wd:Q1248784 .
-      }}
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "fr". }}
-    }}
-    ORDER BY ASC(?dist) 
-    LIMIT 5
-  }}
-}}
-GROUP BY ?paysLabel ?abstract ?superficie ?coordinates ?population ?langueLabel ?link
-
-
-
-
-
-                    SELECT ?place ?placeLabel ?location ?dist 
-                    WHERE {{
-                        wd:{city_id} wdt:P625 ?loc . 
-                        SERVICE wikibase:around {{
-                            ?place wdt:P625 ?location . 
-                            bd:serviceParam wikibase:center ?loc . 
-                            bd:serviceParam wikibase:radius "100" . 
-                            bd:serviceParam wikibase:distance ?dist.
-                        }}
-                        FILTER EXISTS {{
-                            # Is an airport
-                            ?place wdt:P31/wdt:P279* wd:Q1248784 .
-                        }}
-                        SERVICE wikibase:label {{ bd:serviceParam wikibase:language "fr". }}
-                    }}
-                    ORDER BY ASC(?dist) 
-                    LIMIT 5
+- voir sur wikidata comment je peux recuperer les elemet de ville pour enrichir mes otonlogie
+- voir comment generaliser pour ne pas mettre en dure les attribut
+- 

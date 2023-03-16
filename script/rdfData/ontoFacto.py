@@ -132,24 +132,25 @@ def print_results(results):
     print("\n")
 
 def afficherInfoLocalisee(city):
+    print("########### Les villes les plus proches :###########")
+    print_results(queryNearestCities(get_city_id(city)))
     print("########### Les aéroports les plus proches :###########")
     print_results(queryAirports(get_city_id(city)))
     print("########### Les ports les plus proches :###########")
     print_results(queryPorts(get_city_id(city)))
     print("########### Les autoroutes les plus proches :###########")
     print_results(queryHighways(get_city_id(city)))
-    print("########### Les villes les plus proches :###########")
-    print_results(queryNearestCities(get_city_id(city)))
+
 
 
 def afficherInfoGenerales(results):
     for result in results["results"]["bindings"]:
         print("Pays:", result["paysLabel"]["value"])
-        if "abstract" in result:
-            print("Description:", result["abstract"]["value"])
         print("Superficie:", result["superficie"]["value"])
         print("Coordonnées:", result["coordinates"]["value"])
         print("Population:", result["population"]["value"])
+        if "abstract" in result:
+            print("Description:", result["abstract"]["value"])
         if "langues" in result:
             print("Langues:", result["langues"]["value"])
         if "link" in result:
@@ -157,7 +158,7 @@ def afficherInfoGenerales(results):
         if "density" in result:
             print("Densité de population:", result["density"]["value"])
         if "ageDistribution" in result:
-            print("Répartition de l'âge:", result["ageDistribution"]["value"])
+            print("Altitude au-dessus du niveau de la mer:", result["ageDistribution"]["value"])
         if "birthRate" in result:
             print("Taux de natalité:", result["birthRate"]["value"])
         if "deathRate" in result:
@@ -168,73 +169,12 @@ city = input("Entrez un nom de ville (appuyez sur Entrée pour quitter) : ")
 
 
 while city != "":
-    results = queryInfoGeneric(get_city_id(city))
-    afficherInfoGenerales(results)
+    city_id = get_city_id(city)
+    if city_id == "-1":
+        print(f"L'identifiant wikidata pour {city} n'a pas été trouvé.")
+    else:
+        print(f"L'identifiant wikidata pour {city} est : {city_id}")
+        results = queryInfoGeneric(city_id)
+        afficherInfoGenerales(results)
     city = input("Entrez un nom de ville (appuyez sur Entrée pour quitter) : ")
 
-
-
-# def display_city_info(results):
-#     for result in results["results"]["bindings"]:
-#         print("Pays:", result["paysLabel"]["value"])
-#         if "abstract" in result:
-#             print("Description:", result["abstract"]["value"])
-#         print("Superficie:", result["superficie"]["value"])
-#         print("Coordonnées:", result["coordinates"]["value"])
-#         print("Population:", result["population"]["value"])
-
-#         # Afficher le pays
-#         if 'paysLabel' in results:
-#             print(f"Pays : {results['paysLabel']['value']}")
-#         else:
-#             print("Pays : N/A")
-
-#         # Afficher la superficie
-#         if 'superficie' in results:
-#             print(f"Superficie : {results['superficie']['value']} km²")
-#         else:
-#             print("Superficie : N/A")
-
-#         # Afficher les coordonnées
-#         if 'coordinates' in results:
-#             coordinates = results['coordinates']['value'].split("(")[1].split(")")[0].split(" ")
-#             lat = coordinates[0]
-#             long = coordinates[1]
-#             print(f"Latitude : {lat}")
-#             print(f"Longitude : {long}")
-#         else:
-#             print("Coordonnées : N/A")
-
-#         # Afficher la population
-#         if 'population' in results:
-#             print(f"Population : {results['population']['value']}")
-#         else:
-#             print("Population : N/A")
-
-#         # Afficher la densité de population
-#         if 'density' in results:
-#             print(f"Densité de population : {results['density']['value']} hab/km²")
-#         else:
-#             print("Densité de population : N/A")
-
-#         # Afficher la liste des langues parlées
-#         if 'langueLabel' in results:
-#             langues = [langue['value'] for langue in results['langueLabel']]
-#             langues_str = ', '.join(langues)
-#             print(f"Langues parlées : {langues_str}")
-#         else:
-#             print("Langues parlées : N/A")
-
-#         # Afficher la description
-#         if 'abstract' in results:
-#             print(f"Description : {results['abstract']['value']}")
-#         else:
-#             print("Description : N/A")
-
-#         # Afficher le lien Wikipédia
-#         if 'link' in results:
-#             print(f"Lien Wikipédia : {results['link']['value']}")
-#         else:
-#             print("Lien Wikipédia : N/A")
-
-#     print("----------")

@@ -1,0 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix loria: <http://exemple.org/ontology/loria/> .
+@prefix pp: <http://example.org/people/> .
+@prefix ex: <http://example.org/> .
+
+pp:jkrowling loria:write ex:harry_potter .
+ex:harry_potter skos:broaderTransitive ex:Fantacy .
