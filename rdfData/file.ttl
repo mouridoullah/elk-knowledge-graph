@@ -1,64 +1,35 @@
-@prefix : <http://www.semanticweb.org/ontologies/2023/4/seisme#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-:MyOntology a owl:Ontology ;
-  owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
-
-# Définition des classes
-:Catastrophe rdf:type owl:Class ;
-    rdfs:label "Catastrophe"@fr ;
-    rdfs:subClassOf owl:Thing .
-:CatastropheNaturelle rdf:type owl:Class ;
-    rdfs:label "Catastrophe naturelle"@fr ;
-    rdfs:subClassOf :Catastrophe .
-:CatastropheTechnologique rdf:type owl:Class ;
-    rdfs:label "Catastrophe technologique"@fr ;
-    rdfs:subClassOf :Catastrophe .
-:Sauvetage rdf:type owl:Class ;
-    rdfs:label "Opération de sauvetage"@fr ;
-    rdfs:subClassOf owl:Thing .
-:Victime rdf:type owl:Class ;
-    rdfs:label "Victime"@fr ;
-    rdfs:subClassOf owl:Thing .
-:Dommages rdf:type owl:Class ;
-    rdfs:label "Dommages"@fr ;
-    rdfs:subClassOf owl:Thing .
-:Preparation rdf:type owl:Class ;
-    rdfs:label "Préparation"@fr ;
-    rdfs:subClassOf owl:Thing .
-:Evaluation rdf:type owl:Class ;
-    rdfs:label "Évaluation"@fr ;
-    rdfs:subClassOf owl:Thing .
-:Retablissement rdf:type owl:Class ;
-    rdfs:label "Rétablissement"@fr ;
-    rdfs:subClassOf owl:Thing .
+Extension des définitions des types de catastrophes
+:Incendie rdf:type owl:Class ;
+rdfs:label "Incendie"@fr ;
+rdfs:subClassOf :Catastrophe .
 :Inondation rdf:type owl:Class ;
-    rdfs:label "Inondation"@fr ;
-    rdfs:subClassOf :CatastropheNaturelle .
+rdfs:label "Inondation"@fr ;
+rdfs:subClassOf :Catastrophe .
 :Seisme rdf:type owl:Class ;
-    rdfs:label "Séisme"@fr ;
-    rdfs:subClassOf :CatastropheNaturelle .
-:IncendieDeForet rdf:type owl:Class ;
-    rdfs:label "Incendie de forêt"@fr ;
-    rdfs:subClassOf :CatastropheNaturelle .
-:AccidentNucleaire rdf:type owl:Class ;
-    rdfs:label "Accident nucléaire"@fr ;
-    rdfs:subClassOf :CatastropheTechnologique .
-:Explosion rdf:type owl:Class ;
-    rdfs:label "Explosion"@fr ;
-    rdfs:subClassOf :CatastropheTechnologique .
-:EquipeDeSecours rdf:type owl:Class ;
-    rdfs:label "Équipe de secours"@fr ;
-    rdfs:subClassOf :Sauvetage .
-:CentreDhebergement rdf:type owl:Class ;
-    rdfs:label "Centre d'hébergement"@fr ;
-    rdfs:subClassOf :Sauvetage .
-:CentreMedical rdf:type owl:Class ;
-    rdfs:label "Centre médical"@fr ;
-    rdfs:subClassOf :Sauvetage .
+rdfs:label "Séisme"@fr ;
+rdfs:subClassOf :Catastrophe .
+:Tornade rdf:type owl:Class ;
+rdfs:label "Tornade"@fr ;
+rdfs:subClassOf :Catastrophe .
 
+Extension des définitions des causes de catastrophes
+:DefautTechnique rdf:type owl:Class ;
+rdfs:label "Défaut technique"@fr ;
+rdfs:subClassOf :CauseDeCatastrophe .
+:ErreurHumaine rdf:type owl:Class ;
+rdfs:label "Erreur humaine"@fr ;
+rdfs:subClassOf :CauseDeCatastrophe .
+:PhenomeneNaturel rdf:type owl:Class ;
+rdfs:label "Phénomène naturel"@fr ;
+rdfs:subClassOf :CauseDeCatastrophe .
 
-# CALL n10s.onto.import.fetch("https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/cata.ttl", "Turtle") 
+Extension des définitions des risques
+:RisqueChimique rdf:type owl:Class ;
+rdfs:label "Risque chimique"@fr ;
+rdfs:subClassOf :Risque .
+:RisqueSanitaire rdf:type owl:Class ;
+rdfs:label "Risque sanitaire"@fr ;
+rdfs:subClassOf :Risque .
+:RisqueSismique rdf:type owl:Class ;
+rdfs:label "Risque sismique"@fr ;
+rdfs:subClassOf :Risque .
