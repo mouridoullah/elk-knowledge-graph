@@ -10,13 +10,31 @@
 
 
 # Définition des concepts
+:Catastrophe rdf:type owl:Class ;
+    rdfs:label "Catastrophe"@fr ;
+    rdfs:subClassOf owl:Thing .
+    # sous-classes de Catastrophe
+    :CatastropheNaturelle rdf:type owl:Class ;
+        rdfs:label "Catastrophe naturelle"@fr ;
+        rdfs:subClassOf :Catastrophe .
+        # sous-classes de CatastropheNaturelle
+        :Inondation rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :Seisme rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :IncendieDeForet rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+    :CatastropheTechnologique rdf:type owl:Class ;
+        rdfs:label "Catastrophe technologique"@fr ;
+        rdfs:subClassOf :Catastrophe .
+        # sous-classes de CatastropheTechnologique
+        :AccidentNucleaire rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+        :Explosion rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+
 :Victime rdf:type owl:Class ;
     rdfs:label "Victime"@fr ;
     rdfs:subClassOf owl:Thing .
     # sous-classes de Victime
     :Mort rdf:type owl:Class ; rdfs:subClassOf :Victime .
-    :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victim .
-    :Disparu rdf:type owl:Class ; rdfs:subClassOf :Victim .
+    :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victime .
+    :Disparu rdf:type owl:Class ; rdfs:subClassOf :Victime .
 
 :Sauvetage rdf:type owl:Class ;
     rdfs:label "Opération de sauvetage"@fr ;
@@ -34,3 +52,13 @@
     :PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
     :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :Dommages .
     :DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+
+:Preparation rdf:type owl:Class ;
+    rdfs:label "Préparation"@fr ;
+    rdfs:subClassOf owl:Thing .
+    # sous-classes de Preparation
+    :PlanDevacuation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+    :Formation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+    :EquipementDePrevention rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+    :Evaluation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+    :Retablissement rdf:type owl:Class ; rdfs:subClassOf :Preparation .
