@@ -1,218 +1,59 @@
-@prefix loria: <http://exemple.org/ontology/loria/> .
+@prefix : <http://www.semanticweb.org/ontologies/2023/4/seisme#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Définition des concepts
-loria:Catastrophe rdf:type owl:Class ;
-    rdfs:label "Catastrophe"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:CatastropheNaturelle rdf:type owl:Class ;
-    rdfs:label "Catastrophe naturelle"@fr ;
-    rdfs:subClassOf loria:Catastrophe .
-loria:Sauvetage rdf:type owl:Class ;
-    rdfs:label "Opération de sauvetage"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:Victime rdf:type owl:Class ;
-    rdfs:label "Victime"@fr ;
-    rdfs:subClassOf owl:Thing .
-        # sous-classes de Victime
-    loria:Mort rdf:type owl:Class .
-    loria:Blesse rdf:type owl:Class .
-    loria:Disparu rdf:type owl:Class .
-loria:Dommages rdf:type owl:Class ;
-    rdfs:label "Dommages"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:Preparation rdf:type owl:Class ;
-    rdfs:label "Préparation"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:Evaluation rdf:type owl:Class ;
-    rdfs:label "Évaluation"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:Retablissement rdf:type owl:Class ;
-    rdfs:label "Rétablissement"@fr ;
-    rdfs:subClassOf owl:Thing .
-loria:Seisme rdf:type owl:Class ;
-    rdfs:label "Séisme"@fr ;
-    rdfs:subClassOf loria:CatastropheNaturelle .
-loria:EquipeDeSecours rdf:type owl:Class ;
-    rdfs:label "Équipe de secours"@fr ;
-    rdfs:subClassOf loria:Sauvetage .
-loria:CentreDhebergement rdf:type owl:Class ;
-    rdfs:label "Centre d'hébergement"@fr ;
-    rdfs:subClassOf loria:Sauvetage .
-loria:CentreMedical rdf:type owl:Class ;
-    rdfs:label "Centre médical"@fr ;
-    rdfs:subClassOf loria:Sauvetage .
-loria:Mort rdf:type owl:Class ;
-    rdfs:label "Nombre de morts"@fr ;
-    rdfs:subClassOf loria:Victime .
-
-loria:Epicentre a owl:Class .
-loria:Hypocentre a owl:Class .
-loria:Magnitude a owl:Class .
-loria:Intensite a owl:Class .
-loria:ZoneDeRupture a owl:Class .
-loria:Tsunami a owl:Class .
-loria:Replique a owl:Class .
-loria:Faille a owl:Class .
+:Seisme a owl:Class .
+:Epicentre a owl:Class .
+:Hypocentre a owl:Class .
+:Magnitude a owl:Class .
+:Intensite a owl:Class .
+:ZoneDeRupture a owl:Class .
+:Tsunami a owl:Class .
+:Replique a owl:Class .
+:Faille a owl:Class .
 
 # Définition des propriétés
-loria:aLieuDans a owl:ObjectProperty .
-loria:aPourMagnitude a owl:DatatypeProperty .
-loria:aPourIntensite a owl:DatatypeProperty .
-loria:aPourEpicentre a owl:ObjectProperty .
-loria:aPourHypocentre a owl:ObjectProperty .
-loria:aPourZoneDeRupture a owl:ObjectProperty .
-loria:aPourTsunami a owl:ObjectProperty .
-loria:aPourReplique a owl:ObjectProperty .
-loria:estCausePar a owl:ObjectProperty .
-loria:peutCauser a owl:ObjectProperty .
-
-# Définition des propriétés
-loria:aCauseDe rdf:type owl:ObjectProperty ;
-    rdfs:label "à cause de"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range owl:Thing .
-loria:aPourVictime rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour victime"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Victime .
-loria:aEngendre rdf:type owl:ObjectProperty ;
-    rdfs:label "engendre"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Dommages .
-loria:aPourSauvetage rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour sauvetage"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Sauvetage .
-loria:aPourPreparation rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour préparation"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Preparation .
-loria:aPourEvaluation rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour évaluation"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Evaluation .
-loria:aPourRétablissement rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour rétablissement"@fr ;
-    rdfs:domain loria:Catastrophe ;
-    rdfs:range loria:Retablissement .
-loria:aPourCentreDhebergement rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour centre d'hébergement"@fr ;
-    rdfs:domain loria:Sauvetage ;
-    rdfs:range loria:CentreDhebergement .
-loria:aPourCentreMedical rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour centre médical"@fr ;
-    rdfs:domain loria:Sauvetage ;
-    rdfs:range loria:CentreMedical .
-loria:aPourVictime rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour victime"@fr ;
-    rdfs:domain loria:Sauvetage ;
-    rdfs:range loria:Victime .
-
+:aLieuDans a owl:ObjectProperty .
+:aPourMagnitude a owl:DatatypeProperty .
+:aPourIntensite a owl:DatatypeProperty .
+:aPourEpicentre a owl:ObjectProperty .
+:aPourHypocentre a owl:ObjectProperty .
+:aPourZoneDeRupture a owl:ObjectProperty .
+:aPourTsunami a owl:ObjectProperty .
+:aPourReplique a owl:ObjectProperty .
+:estCausePar a owl:ObjectProperty .
+:peutCauser a owl:ObjectProperty .
 
 # Définition des sous-classes
-loria:Epicentre rdfs:subClassOf loria:Seisme .
-loria:Hypocentre rdfs:subClassOf loria:Seisme .
-loria:Magnitude rdfs:subClassOf loria:Seisme .
-loria:Intensite rdfs:subClassOf loria:Seisme .
-loria:ZoneDeRupture rdfs:subClassOf loria:Seisme .
-loria:Tsunami rdfs:subClassOf loria:Seisme .
-loria:Replique rdfs:subClassOf loria:Seisme .
-loria:Faille rdfs:subClassOf loria:Seisme .
+:Epicentre rdfs:subClassOf :Seisme .
+:Hypocentre rdfs:subClassOf :Seisme .
+:Magnitude rdfs:subClassOf :Seisme .
+:Intensite rdfs:subClassOf :Seisme .
+:ZoneDeRupture rdfs:subClassOf :Seisme .
+:Tsunami rdfs:subClassOf :Seisme .
+:Replique rdfs:subClassOf :Seisme .
+:Faille rdfs:subClassOf :Seisme .
 
 # Définition des relations
-loria:aLieuDans rdfs:domain loria:Seisme .
-loria:aLieuDans rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
-loria:aPourMagnitude rdfs:domain loria:Seisme .
-loria:aPourMagnitude rdfs:range xsd:float .
-loria:aPourIntensite rdfs:domain loria:Seisme .
-loria:aPourIntensite rdfs:range xsd:int .
-loria:aPourEpicentre rdfs:domain loria:Seisme .
-loria:aPourEpicentre rdfs:range loria:Epicentre .
-loria:aPourHypocentre rdfs:domain loria:Seisme .
-loria:aPourHypocentre rdfs:range loria:Hypocentre .
-loria:aPourZoneDeRupture rdfs:domain loria:Seisme .
-loria:aPourZoneDeRupture rdfs:range loria:ZoneDeRupture .
-loria:aPourTsunami rdfs:domain loria:Seisme .
-loria:aPourTsunami rdfs:range loria:Tsunami .
-loria:aPourReplique rdfs:domain loria:Seisme .
-loria:aPourReplique rdfs:range loria:Replique .
-loria:estCausePar rdfs:domain loria:Seisme .
-loria:estCausePar rdfs:range loria:Faille .
-loria:peutCauser rdfs:domain loria:Seisme .
-loria:peutCauser rdfs:range loria:Tsunami .
-
-
-# Extension des définitions des sauvetages
-loria:HelicoptereDeSauvetage rdf:type owl:Class ;
-    rdfs:label "Hélicoptère de sauvetage"@fr ;
-    rdfs:subClassOf loria:EquipeDeSecours .
-loria:EquipeDeSecoursTerrestre
-    rdf:type owl:Class ;
-    rdfs:label "Équipe de secours terrestre"@fr ;
-    rdfs:subClassOf loria:EquipeDeSecours .
-loria:EquipeDeSecoursAquatique rdf:type owl:Class ;
-    rdfs:label "Équipe de secours aquatique"@fr ;
-    rdfs:subClassOf loria:EquipeDeSecours .
-loria:CentreDeSecours rdf:type owl:Class ;
-    rdfs:label "Centre de secours"@fr ;
-    rdfs:subClassOf loria:Sauvetage .
-loria:CentreDhebergement rdf:type owl:Class ;
-    rdfs:label "Centre d'hébergement"@fr .
-loria:CentreMedical rdf:type owl:Class ;
-    rdfs:label "Centre médical"@fr .
-
-# Extension des définitions des préparations
-loria:Evacuation rdf:type owl:Class ;
-    rdfs:label "Évacuation"@fr ;
-    rdfs:subClassOf loria:Preparation .
-loria:EvacuationSanitaire rdf:type owl:Class ;
-    rdfs:label "Évacuation sanitaire"@fr ;
-    rdfs:subClassOf loria:Preparation .
-loria:PlanCommunalDeSauvegarde rdf:type owl:Class ;
-    rdfs:label "Plan communal de sauvegarde"@fr ;
-    rdfs:subClassOf loria:Preparation .
-loria:PlanDeContinuiteDesActivites rdf:type owl:Class ;
-    rdfs:label "Plan de continuité des activités"@fr ;
-    rdfs:subClassOf loria:Preparation .
-
-# Extension des définitions des évaluations
-loria:EvaluationDesDommages rdf:type owl:Class ;
-    rdfs:label "Évaluation des dommages"@fr ;
-    rdfs:subClassOf loria:Evaluation .
-loria:EvaluationDesRisques rdf:type owl:Class ;
-    rdfs:label "Évaluation des risques"@fr ;
-    rdfs:subClassOf loria:Evaluation .
-
-# Extension des définitions des rétablissements
-loria:Reconstruction rdf:type owl:Class ;
-    rdfs:label "Reconstruction"@fr ;
-    rdfs:subClassOf loria:Retablissement .
-loria:Rehabilitation rdf:type owl:Class ;
-    rdfs:label "Réhabilitation"@fr ;
-    rdfs:subClassOf loria:Retablissement .
-loria:Relogement rdf:type owl:Class ;
-    rdfs:label "Relogement"@fr ;
-    rdfs:subClassOf loria:Retablissement .
-
-# Extension des définitions des dommages
-loria:DommagesMateriels rdf:type owl:Class ;
-    rdfs:label "Dommages matériels"@fr ;
-    rdfs:subClassOf loria:Dommages .
-loria:DommagesHumains rdf:type owl:Class ;
-    rdfs:label "Dommages humains"@fr ;
-    rdfs:subClassOf loria:Dommages .
-loria:PerteEconomique rdf:type owl:Class ;
-    rdfs:label "Perte économique"@fr ;
-    rdfs:subClassOf loria:Dommages .
-
-# Extension des définitions des victimes
-loria:VictimeCollaterale rdf:type owl:Class ;
-    rdfs:label "Victime collatérale"@fr ;
-    rdfs:subClassOf loria:Victime .
-loria:VictimeIndirecte rdf:type owl:Class ;
-    rdfs:label "Victime indirecte"@fr ;
-    rdfs:subClassOf loria:Victime .
+:aLieuDans rdfs:domain :Seisme .
+:aLieuDans rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+:aPourMagnitude rdfs:domain :Seisme .
+:aPourMagnitude rdfs:range xsd:float .
+:aPourIntensite rdfs:domain :Seisme .
+:aPourIntensite rdfs:range xsd:int .
+:aPourEpicentre rdfs:domain :Seisme .
+:aPourEpicentre rdfs:range :Epicentre .
+:aPourHypocentre rdfs:domain :Seisme .
+:aPourHypocentre rdfs:range :Hypocentre .
+:aPourZoneDeRupture rdfs:domain :Seisme .
+:aPourZoneDeRupture rdfs:range :ZoneDeRupture .
+:aPourTsunami rdfs:domain :Seisme .
+:aPourTsunami rdfs:range :Tsunami .
+:aPourReplique rdfs:domain :Seisme .
+:aPourReplique rdfs:range :Replique .
+:estCausePar rdfs:domain :Seisme .
+:estCausePar rdfs:range :Faille .
+:peutCauser rdfs:domain :Seisme .
+:peutCauser rdfs:range :Tsunami .
