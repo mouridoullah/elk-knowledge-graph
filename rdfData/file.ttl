@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :MyOntology a owl:Ontology ;
-  owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/cata.ttl> .
+  owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
 
 # Définition des concepts
 loria:Catastrophe rdf:type owl:Class ;
