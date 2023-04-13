@@ -62,3 +62,45 @@
     :EquipementDePrevention rdf:type owl:Class ; rdfs:subClassOf :Preparation .
     :Evaluation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
     :Retablissement rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+
+# Définition des propriétés
+:aCauseDe rdf:type owl:ObjectProperty ;
+    rdfs:label "à cause de"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range owl:Thing .
+:aPourVictime rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour victime"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Victime .
+:aEngendre rdf:type owl:ObjectProperty ;
+    rdfs:label "engendre"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Dommages .
+:aPourSauvetage rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour sauvetage"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Sauvetage .
+:aPourPreparation rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour préparation"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Preparation .
+:aPourEvaluation rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour évaluation"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Evaluation .
+:aPourRétablissement rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour rétablissement"@fr ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Retablissement .
+:aPourCentreDhebergement rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour centre d'hébergement"@fr ;
+    rdfs:domain :Sauvetage ;
+    rdfs:range :CentreDhebergement .
+:aPourCentreMedical rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour centre médical"@fr ;
+    rdfs:domain :Sauvetage ;
+    rdfs:range :CentreMedical .
+:aPourVictime rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour victime"@fr ;
+    rdfs:domain :Sauvetage ;
+    rdfs:range :Victime .
