@@ -21,16 +21,22 @@
         :Inondation rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Seisme rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :IncendieDeForet rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :Tempete rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :Secheresse rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :GlissementDeTerrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :Tsunami rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
     :CatastropheTechnologique rdf:type owl:Class ;
         rdfs:label "Catastrophe technologique"@fr ;
         rdfs:subClassOf :Catastrophe .
         # sous-classes de CatastropheTechnologique
         :AccidentNucleaire rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
         :Explosion rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+        :IncendieDeMaison rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+        :AccidentDeTrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
 
 :Victime rdf:type owl:Class ;
     rdfs:label "Victime"@fr ;
-    rdfs:subClassOf owl:Thing .
+    rdfs:subClassOf owl:Thing ; rdfs:subClassOf :DommagesHumains .
     # sous-classes de Victime
     :Mort rdf:type owl:Class ; rdfs:subClassOf :Victime .
     :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victime .
@@ -44,14 +50,40 @@
     :CentreDhebergement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
     :CentreMedical rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
     :Deplacement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+    :CentreDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+    :RechercheDeSurvivants rdf:type owl:Class ;
+        rdfs:label "Recherche de survivants"@fr ;
+        rdfs:subClassOf :Sauvetage .
+    :PremiersSecours rdf:type owl:Class ;
+        rdfs:label "Premiers secours"@fr ;
+        rdfs:subClassOf :Sauvetage .
+        # sous-classes de EquipeDeSecours
+        :HelicoptereDeSauvetage rdf:type owl:Class ;
+            rdfs:label "Hélicoptère de sauvetage"@fr ;
+            rdfs:subClassOf :EquipeDeSecours .
+        :EquipeDeSecoursTerrestre
+            rdf:type owl:Class ;
+            rdfs:label "Équipe de secours terrestre"@fr ;
+            rdfs:subClassOf :EquipeDeSecours .
+        :EquipeDeSecoursAquatique rdf:type owl:Class ;
+            rdfs:label "Équipe de secours aquatique"@fr ;
+            rdfs:subClassOf :EquipeDeSecours .
 
 :Dommages rdf:type owl:Class ;
     rdfs:label "Dommages"@fr ;
     rdfs:subClassOf owl:Thing .
     # sous-classes de Dommages
     :PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
-    :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+    :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
     :DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+
+    # Extension des définitions des dommages
+    :DommagesMateriels rdf:type owl:Class ;
+        rdfs:label "Dommages matériels"@fr ;
+        rdfs:subClassOf :Dommages .
+    :DommagesHumains rdf:type owl:Class ;
+        rdfs:label "Dommages humains"@fr ;
+        rdfs:subClassOf :Dommages .
 
 :Preparation rdf:type owl:Class ;
     rdfs:label "Préparation"@fr ;
@@ -61,7 +93,38 @@
     :Formation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
     :EquipementDePrevention rdf:type owl:Class ; rdfs:subClassOf :Preparation .
     :Evaluation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+
+        # Extension des définitions des évaluations
+        :EvaluationDesDommages rdf:type owl:Class ;
+            rdfs:label "Évaluation des dommages"@fr ;
+            rdfs:subClassOf :Evaluation .
+        :EvaluationDesRisques rdf:type owl:Class ;
+            rdfs:label "Évaluation des risques"@fr ;
+            rdfs:subClassOf :Evaluation .
+
     :Retablissement rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+
+        # Extension des définitions des rétablissements
+        :Reconstruction rdf:type owl:Class ;
+            rdfs:label "Reconstruction"@fr ;
+            rdfs:subClassOf :Retablissement .
+        :Rehabilitation rdf:type owl:Class ;
+            rdfs:label "Réhabilitation"@fr ;
+            rdfs:subClassOf :Retablissement .
+        :Relogement rdf:type owl:Class ;
+            rdfs:label "Relogement"@fr ;
+            rdfs:subClassOf :Retablissement .
+
+
+    :EvacuationSanitaire rdf:type owl:Class ;
+        rdfs:label "Évacuation sanitaire"@fr ;
+        rdfs:subClassOf :PlanDevacuation .
+    :PlanCommunalDeSauvegarde rdf:type owl:Class ;
+        rdfs:label "Plan communal de sauvegarde"@fr ;
+        rdfs:subClassOf :PlanDevacuation .
+    :PlanDeContinuiteDesActivites rdf:type owl:Class ;
+        rdfs:label "Plan de continuité des activités"@fr ;
+        rdfs:subClassOf :Preparation .
 
 # Définition des propriétés
 :aCauseDe rdf:type owl:ObjectProperty ;
@@ -104,3 +167,33 @@
     rdfs:label "a pour victime"@fr ;
     rdfs:domain :Sauvetage ;
     rdfs:range :Victime .
+
+
+
+# Définition des propriétés de données
+:date rdf:type owl:DatatypeProperty .
+:date rdfs:range xsd:date .
+:lieu rdf:type owl:DatatypeProperty .
+:lieu rdfs:range xsd:string .
+:ampleur rdf:type owl:DatatypeProperty .
+:ampleur rdfs:range xsd:float .
+
+# Définition des relations
+:A_lieu rdf:type owl:ObjectProperty .
+:A_lieu rdfs:domain :Catastrophe .
+:A_lieu rdfs:range xsd:string .
+:Implique rdf:type owl:ObjectProperty .
+:Implique rdfs:domain :Catastrophe .
+:Implique rdfs:range owl:Thing .
+:Est_lié_à rdf:type owl:ObjectProperty .
+:Est_lié_à rdfs:domain :Catastrophe .
+:Est_lié_à rdfs:range owl:Thing .
+:Est_survenu_à rdf:type owl:ObjectProperty .
+:Est_survenu_à rdfs:domain :Catastrophe .
+:Est_survenu_à rdfs:range xsd:date .
+:A_cause_de rdf:type owl:ObjectProperty .
+:A_cause_de rdfs:domain :Dommages .
+:A_cause_de rdfs:range :Catastrophe .
+:Affecte rdf:type owl:ObjectProperty .
+:Affecte rdfs:domain :Victime .
+:Affecte rdfs:range :Catastrophe .
