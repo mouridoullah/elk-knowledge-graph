@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Catastrophe">
+    <rdfs:label xml:lang="fr">Catastrophe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/CatastropheNaturelle">
+    <rdfs:label xml:lang="fr">Catastrophe naturelle</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Sauvetage">
+    <rdfs:label xml:lang="fr">Opération de sauvetage</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Victime">
+    <rdfs:label xml:lang="fr">Victime</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Mort">
+    <rdfs:label xml:lang="fr">Nombre de morts</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Victime"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Blesse">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Disparu">
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Dommages">
+    <rdfs:label xml:lang="fr">Dommages</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Preparation">
+    <rdfs:label xml:lang="fr">Préparation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Evaluation">
+    <rdfs:label xml:lang="fr">Évaluation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Retablissement">
+    <rdfs:label xml:lang="fr">Rétablissement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Seisme">
+    <rdfs:label xml:lang="fr">Séisme</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/CatastropheNaturelle"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EquipeDeSecours">
+    <rdfs:label xml:lang="fr">Équipe de secours</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/CentreDhebergement">
+    <rdfs:label xml:lang="fr">Centre d'hébergement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/CentreMedical">
+    <rdfs:label xml:lang="fr">Centre médical</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Epicentre">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Hypocentre">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Magnitude">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Intensite">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/ZoneDeRupture">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Tsunami">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Replique">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Faille">
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aLieuDans">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </owl:ObjectProperty>
+
+  <owl:DatatypeProperty rdf:about="http://exemple.org/ontology/loria/aPourMagnitude">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="http://exemple.org/ontology/loria/aPourIntensite">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourEpicentre">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Epicentre"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourHypocentre">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Hypocentre"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourZoneDeRupture">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/ZoneDeRupture"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourTsunami">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Tsunami"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourReplique">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Replique"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/estCausePar">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Faille"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/peutCauser">
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Seisme"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Tsunami"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aCauseDe">
+    <rdfs:label xml:lang="fr">à cause de</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourVictime">
+    <rdfs:label xml:lang="fr">a pour victime</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Victime"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aEngendre">
+    <rdfs:label xml:lang="fr">engendre</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Dommages"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourSauvetage">
+    <rdfs:label xml:lang="fr">a pour sauvetage</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourPreparation">
+    <rdfs:label xml:lang="fr">a pour préparation</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Preparation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourEvaluation">
+    <rdfs:label xml:lang="fr">a pour évaluation</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Evaluation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourRétablissement">
+    <rdfs:label xml:lang="fr">a pour rétablissement</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Catastrophe"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/Retablissement"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourCentreDhebergement">
+    <rdfs:label xml:lang="fr">a pour centre d'hébergement</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/CentreDhebergement"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://exemple.org/ontology/loria/aPourCentreMedical">
+    <rdfs:label xml:lang="fr">a pour centre médical</rdfs:label>
+    <rdfs:domain rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+    <rdfs:range rdf:resource="http://exemple.org/ontology/loria/CentreMedical"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/HelicoptereDeSauvetage">
+    <rdfs:label xml:lang="fr">Hélicoptère de sauvetage</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/EquipeDeSecours"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EquipeDeSecoursTerrestre">
+    <rdfs:label xml:lang="fr">Équipe de secours terrestre</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/EquipeDeSecours"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EquipeDeSecoursAquatique">
+    <rdfs:label xml:lang="fr">Équipe de secours aquatique</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/EquipeDeSecours"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/CentreDeSecours">
+    <rdfs:label xml:lang="fr">Centre de secours</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Sauvetage"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Evacuation">
+    <rdfs:label xml:lang="fr">Évacuation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Preparation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EvacuationSanitaire">
+    <rdfs:label xml:lang="fr">Évacuation sanitaire</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Preparation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/PlanCommunalDeSauvegarde">
+    <rdfs:label xml:lang="fr">Plan communal de sauvegarde</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Preparation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/PlanDeContinuiteDesActivites">
+    <rdfs:label xml:lang="fr">Plan de continuité des activités</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Preparation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EvaluationDesDommages">
+    <rdfs:label xml:lang="fr">Évaluation des dommages</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Evaluation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/EvaluationDesRisques">
+    <rdfs:label xml:lang="fr">Évaluation des risques</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Evaluation"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Reconstruction">
+    <rdfs:label xml:lang="fr">Reconstruction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Retablissement"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Rehabilitation">
+    <rdfs:label xml:lang="fr">Réhabilitation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Retablissement"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/Relogement">
+    <rdfs:label xml:lang="fr">Relogement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Retablissement"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/DommagesMateriels">
+    <rdfs:label xml:lang="fr">Dommages matériels</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Dommages"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/DommagesHumains">
+    <rdfs:label xml:lang="fr">Dommages humains</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Dommages"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/PerteEconomique">
+    <rdfs:label xml:lang="fr">Perte économique</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Dommages"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/VictimeCollaterale">
+    <rdfs:label xml:lang="fr">Victime collatérale</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Victime"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://exemple.org/ontology/loria/VictimeIndirecte">
+    <rdfs:label xml:lang="fr">Victime indirecte</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://exemple.org/ontology/loria/Victime"/>
+  </owl:Class>
+
+</rdf:RDF>
