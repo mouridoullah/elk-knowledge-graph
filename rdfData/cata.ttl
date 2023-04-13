@@ -1,5 +1,62 @@
-PREFIX : <http://example.com/onto#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
+@prefix : <http://www.semanticweb.org/ontologies/2023/4/seisme#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 :MyOntology a owl:Ontology ;
   owl:imports <https://raw.githubusercontent.com/username/repo/main/myOntology.owl> .
+
+# Définition des concepts
+:Seisme a owl:Class .
+:Epicentre a owl:Class .
+:Hypocentre a owl:Class .
+:Magnitude a owl:Class .
+:Intensite a owl:Class .
+:ZoneDeRupture a owl:Class .
+:Tsunami a owl:Class .
+:Replique a owl:Class .
+:Faille a owl:Class .
+
+# Définition des propriétés
+:aLieuDans a owl:ObjectProperty .
+:aPourMagnitude a owl:DatatypeProperty .
+:aPourIntensite a owl:DatatypeProperty .
+:aPourEpicentre a owl:ObjectProperty .
+:aPourHypocentre a owl:ObjectProperty .
+:aPourZoneDeRupture a owl:ObjectProperty .
+:aPourTsunami a owl:ObjectProperty .
+:aPourReplique a owl:ObjectProperty .
+:estCausePar a owl:ObjectProperty .
+:peutCauser a owl:ObjectProperty .
+
+# Définition des sous-classes
+:Epicentre rdfs:subClassOf :Seisme .
+:Hypocentre rdfs:subClassOf :Seisme .
+:Magnitude rdfs:subClassOf :Seisme .
+:Intensite rdfs:subClassOf :Seisme .
+:ZoneDeRupture rdfs:subClassOf :Seisme .
+:Tsunami rdfs:subClassOf :Seisme .
+:Replique rdfs:subClassOf :Seisme .
+:Faille rdfs:subClassOf :Seisme .
+
+# Définition des relations
+:aLieuDans rdfs:domain :Seisme .
+:aLieuDans rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+:aPourMagnitude rdfs:domain :Seisme .
+:aPourMagnitude rdfs:range xsd:float .
+:aPourIntensite rdfs:domain :Seisme .
+:aPourIntensite rdfs:range xsd:int .
+:aPourEpicentre rdfs:domain :Seisme .
+:aPourEpicentre rdfs:range :Epicentre .
+:aPourHypocentre rdfs:domain :Seisme .
+:aPourHypocentre rdfs:range :Hypocentre .
+:aPourZoneDeRupture rdfs:domain :Seisme .
+:aPourZoneDeRupture rdfs:range :ZoneDeRupture .
+:aPourTsunami rdfs:domain :Seisme .
+:aPourTsunami rdfs:range :Tsunami .
+:aPourReplique rdfs:domain :Seisme .
+:aPourReplique rdfs:range :Replique .
+:estCausePar rdfs:domain :Seisme .
+:estCausePar rdfs:range :Faille .
+:peutCauser rdfs:domain :Seisme .
+:peutCauser rdfs:range :Tsunami .
