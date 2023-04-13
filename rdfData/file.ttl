@@ -3,7 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix mobilisation_rule: <http://example.com/mobilisation_rule#> .
+# @prefix mobilisation_rule: <http://example.com/mobilisation_rule#> .
 
 :MyOntology a owl:Ontology ;
     owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
@@ -137,7 +137,7 @@
 :aEngendre rdf:type owl:ObjectProperty ;
     rdfs:label "engendre"@fr ;
     rdfs:domain :Catastrophe ;
-    rdfs:range :Dommages ; :ampleur.
+    rdfs:range :Dommages , :ampleur.
 :aPourSauvetage rdf:type owl:ObjectProperty ;
     rdfs:label "a pour sauvetage"@fr ;
     rdfs:domain :Catastrophe ;
@@ -201,4 +201,4 @@
 :Mobilise rdfs:domain :Catastrophe .
 :Mobilise rdfs:range :EquipeDeSecours .
 
-[ mobilisation_rule: (?c rdf:type :Catastrophe) (?c :Implique ?v) (?v rdf:type :Victime) -> (?c :Mobilise ?es) (?es rdf:type :EquipeDeSecours)]
+# [ mobilisation_rule: (?c rdf:type :Catastrophe) (?c :Implique ?v) (?v rdf:type :Victime) -> (?c :Mobilise ?es) (?es rdf:type :EquipeDeSecours)]
