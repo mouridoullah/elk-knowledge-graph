@@ -5,7 +5,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Définition des concepts
-
 loria:Catastrophe rdf:type owl:Class ;
     rdfs:label "Catastrophe"@fr ;
     rdfs:subClassOf owl:Thing .
