@@ -138,11 +138,7 @@
 :aEngendre rdf:type owl:ObjectProperty ;
     rdfs:label "engendre"@fr ;
     rdfs:domain :Catastrophe ;
-    rdfs:range :Dommages .
-:aEngendre rdf:type owl:ObjectProperty ;
-    rdfs:label "engendre"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :ampleur.
+    rdfs:range :Dommages ; :ampleur.
 :aPourSauvetage rdf:type owl:ObjectProperty ;
     rdfs:label "a pour sauvetage"@fr ;
     rdfs:domain :Catastrophe ;
@@ -201,3 +197,9 @@
 :Affecte rdf:type owl:ObjectProperty .
 :Affecte rdfs:domain :Victime .
 :Affecte rdfs:range :Catastrophe .
+
+:Mobilise rdf:type owl:ObjectProperty .
+:Mobilise rdfs:domain :Catastrophe .
+:Mobilise rdfs:range :EquipeDeSecours .
+
+[ mobilisation_rule: (?c rdf:type :Catastrophe) (?c :Implique ?v) (?v rdf:type :Victime) -> (?c :Mobilise ?es) (?es rdf:type :EquipeDeSecours)]
