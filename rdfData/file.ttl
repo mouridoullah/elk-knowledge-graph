@@ -1,4 +1,3 @@
-
 @prefix : <http://www.semanticweb.org/ontologies/2023/4/seisme#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,91 +5,32 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :MyOntology a owl:Ontology ;
-  owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
+    owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
+
+
 
 # Définition des concepts
-:Victime rdf:type owl:Class .
+:Victime rdf:type owl:Class ;
+    rdfs:label "Victime"@fr ;
+    rdfs:subClassOf owl:Thing .
     # sous-classes de Victime
-    :Mort rdf:type owl:Class .
-    :Blesse rdf:type owl:Class .
-    :Disparu rdf:type owl:Class .
-:Sauvetage rdf:type owl:Class .
+    :Mort rdf:type owl:Class ; rdfs:subClassOf :Victime .
+    :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victim .
+    :Disparu rdf:type owl:Class ; rdfs:subClassOf :Victim .
+
+:Sauvetage rdf:type owl:Class ;
+    rdfs:label "Opération de sauvetage"@fr ;
+    rdfs:subClassOf owl:Thing .
     # sous-classes de Sauvetage
-    :EquipeDeSecours rdf:type owl:Class .
-    :CentreDhebergement rdf:type owl:Class .
-    :CentreMedical rdf:type owl:Class .
-:Deplacement rdf:type owl:Class .
-:Dommages rdf:type owl:Class .
+    :EquipeDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+    :CentreDhebergement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+    :CentreMedical rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+    :Deplacement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+
+:Dommages rdf:type owl:Class ;
+    rdfs:label "Dommages"@fr ;
+    rdfs:subClassOf owl:Thing .
     # sous-classes de Dommages
-    :PerteEconomique rdf:type owl:Class .
-    :DestructionDeBatiments rdf:type owl:Class .
-    :DomagesEnvironnementaux rdf:type owl:Class .
-:Preparation rdf:type owl:Class .
-    # sous-classes de Preparation
-    :PlanDevacuation rdf:type owl:Class .
-    :Formation rdf:type owl:Class .
-    :EquipementDePrevention rdf:type owl:Class .
-:Evaluation rdf:type owl:Class .
-:Retablissement rdf:type owl:Class .
-:Catastrophe rdf:type owl:Class .
-    # sous-classes de Catastrophe
-    :CatastropheNaturelle rdf:type owl:Class .
-        # sous-classes de CatastropheNaturelle
-        :Inondation rdf:type owl:Class .
-        :Seisme rdf:type owl:Class .
-        :IncendieDeForet rdf:type owl:Class .
-    :CatastropheTechnologique rdf:type owl:Class .
-        # sous-classes de CatastropheTechnologique
-        :AccidentNucleaire rdf:type owl:Class .
-        :Explosion rdf:type owl:Class .
-
-# Définition des propriétés de données
-:date rdf:type owl:DatatypeProperty .
-:date rdfs:range xsd:date .
-:lieu rdf:type owl:DatatypeProperty .
-:lieu rdfs:range xsd:string .
-:ampleur rdf:type owl:DatatypeProperty .
-:ampleur rdfs:range xsd:float .
-
-# Définition des relations
-:A_lieu rdf:type owl:ObjectProperty .
-:A_lieu rdfs:domain :Catastrophe .
-:A_lieu rdfs:range xsd:string .
-:Implique rdf:type owl:ObjectProperty .
-:Implique rdfs:domain :Catastrophe .
-:Implique rdfs:range owl:Thing .
-:Est_lié_à rdf:type owl:ObjectProperty .
-:Est_lié_à rdfs:domain :Catastrophe .
-:Est_lié_à rdfs:range owl:Thing .
-:Est_survenu_à rdf:type owl:ObjectProperty .
-:Est_survenu_à rdfs:domain :Catastrophe .
-:Est_survenu_à rdfs:range xsd:date .
-:A_cause_de rdf:type owl:ObjectProperty .
-:A_cause_de rdfs:domain :Dommages .
-:A_cause_de rdfs:range :Catastrophe .
-:Affecte rdf:type owl:ObjectProperty .
-:Affecte rdfs:domain :Victime .
-:Affecte rdfs:range :Catastrophe .
-
-# Définition des axiomes
-:Catastrophe rdf:subClassOf owl:Thing .
-:Victime rdf:subClassOf owl:Thing .
-:Sauvetage rdf:subClassOf owl:Thing .
-:Dommages rdf:subClassOf owl:Thing .
-:Preparation rdf:subClassOf owl:Thing .
-:Evaluation rdf:subClassOf owl:Thing .
-:Retablissement rdf:subClassOf owl:Thing .
-:Inondation rdf:subClassOf :CatastropheNaturelle .
-:Seisme rdf:subClassOf :CatastropheNaturelle .
-:IncendieDeForet rdf:subClassOf :CatastropheNaturelle .
-:AccidentNucleaire rdf:subClassOf :CatastropheTechnologique .
-:Explosion rdf:subClassOf :CatastropheTechnologique .
-:EquipeDeSecours rdf:subClassOf :Sauvetage .
-:CentreDhebergement rdf:subClassOf :Sauvetage .
-:CentreMedical rdf:subClassOf :Sauvetage .
-:Mort rdf:subClassOf :Victime .
-:Blesse rdf:subClassOf :Victime .
-:Disparu rdf:subClassOf :Victime .
-:DestructionDeBatiments rdf:subClassOf :Dommages .
-:DomagesEnvironnementaux rdf:subClassOf :Dommages .
-:PerteEconomique rdf:subClassOf :Dommages .
+    :PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+    :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+    :DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
