@@ -4,7 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 :MyOntology a owl:Ontology ;
-  owl:imports <https://raw.githubusercontent.com/username/repo/main/myOntology.owl> .
+  owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/cata.ttl> .
 
 # Définition des concepts
 :Seisme a owl:Class .
