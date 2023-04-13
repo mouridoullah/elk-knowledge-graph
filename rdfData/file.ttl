@@ -3,11 +3,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mobilisation_rule: <http://example.com/mobilisation_rule#> .
 
 :MyOntology a owl:Ontology ;
     owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
-
-
 
 # Définition des concepts
 :Catastrophe rdf:type owl:Class ;
