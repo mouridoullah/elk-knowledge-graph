@@ -59,8 +59,6 @@
 :CentreMedical rdf:type owl:Class ;
     rdfs:label "Centre médical"@fr ;
     rdfs:subClassOf :Sauvetage .
-:Mort rdf:type owl:Class ;
-    rdfs:label "Nombre de mort"@fr;
-    rdfs:subClassOf :Victime .
+
 
 # CALL n10s.onto.import.fetch("https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/cata.ttl", "Turtle") 
