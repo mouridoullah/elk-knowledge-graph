@@ -138,7 +138,7 @@
 :aEngendre rdf:type owl:ObjectProperty ;
     rdfs:label "engendre"@fr ;
     rdfs:domain :Catastrophe ;
-    rdfs:range :Dommages .
+    rdfs:range :Dommages ; :ampleur.
 :aPourSauvetage rdf:type owl:ObjectProperty ;
     rdfs:label "a pour sauvetage"@fr ;
     rdfs:domain :Catastrophe ;
