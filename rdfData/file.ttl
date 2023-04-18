@@ -180,7 +180,7 @@
 # Définition des relations
 :A_lieu rdf:type owl:ObjectProperty .
 :A_lieu rdfs:domain :Catastrophe .
-:A_lieu rdfs:range xsd:string .
+:A_lieu rdfs:range :lieu.
 :Implique rdf:type owl:ObjectProperty .
 :Implique rdfs:domain :Catastrophe .
 :Implique rdfs:range owl:Thing .
@@ -189,7 +189,7 @@
 :Est_lié_à rdfs:range owl:Thing .
 :Est_survenu_à rdf:type owl:ObjectProperty .
 :Est_survenu_à rdfs:domain :Catastrophe .
-:Est_survenu_à rdfs:range xsd:date .
+:Est_survenu_à rdfs:range :date .
 :A_cause_de rdf:type owl:ObjectProperty .
 :A_cause_de rdfs:domain :Dommages .
 :A_cause_de rdfs:range :Catastrophe .
