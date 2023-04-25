@@ -21,6 +21,7 @@
         :Seisme rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :IncendieDeForet rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Tempete rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+        :Cyclone rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Secheresse rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :GlissementDeTerrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Tsunami rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
