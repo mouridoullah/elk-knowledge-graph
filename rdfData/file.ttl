@@ -178,26 +178,6 @@
 :ampleur rdf:type owl:DatatypeProperty .
 :ampleur rdfs:range xsd:float .
 
-# Définition des relations
-:A_lieu rdf:type owl:ObjectProperty .
-:A_lieu rdfs:domain :Catastrophe .
-:A_lieu rdfs:range :lieu.
-:Implique rdf:type owl:ObjectProperty .
-:Implique rdfs:domain :Catastrophe .
-:Implique rdfs:range owl:Thing .
-:Est_lié_à rdf:type owl:ObjectProperty .
-:Est_lié_à rdfs:domain :Catastrophe .
-:Est_lié_à rdfs:range owl:Thing .
-:Est_survenu_à rdf:type owl:ObjectProperty .
-:Est_survenu_à rdfs:domain :Catastrophe .
-:Est_survenu_à rdfs:range :date .
-:A_cause_de rdf:type owl:ObjectProperty .
-:A_cause_de rdfs:domain :Dommages .
-:A_cause_de rdfs:range :Catastrophe .
-:Affecte rdf:type owl:ObjectProperty .
-:Affecte rdfs:domain :Victime .
-:Affecte rdfs:range :Catastrophe .
-
 :Mobilise rdf:type owl:ObjectProperty .
 :Mobilise rdfs:domain :Catastrophe .
 :Mobilise rdfs:range :EquipeDeSecours .
