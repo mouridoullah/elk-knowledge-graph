@@ -20,4 +20,4 @@ ex:Fantacy skos:broaderTransitive ex:Story .
 loria:nearTo a owl:SymmetricProperty .
 loria:nearTo rdfs:domain dbo:PopulatedPlace .
 loria:nearTo rdfs:range dbo:PopulatedPlace .
-city:Paris loria:nearTo city:Versailles .
+ex:Paris loria:nearTo ex:Versailles .
