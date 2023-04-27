@@ -4,23 +4,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix city: <http://example.org/city/> .
 
 
 :MyOntology a owl:Ontology ;
   owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/cata.ttl> .
 
-loria:write rdfs:domain foaf:Person .
-loria:write rdfs:range foaf:Document .
-loria:write owl:inverseOf loria:writtenBy .
-loria:write rdfs:subPropertyOf dcterms:creator .
+loria:write rdf:type owl:ObjectProperty ;
+  rdfs:domain foaf:Person ;
+  rdfs:range foaf:Document ;
+  owl:inverseOf loria:writtenBy ;
+  rdfs:subPropertyOf dcterms:creator .
 
-ex:Fantacy skos:broaderTransitive ex:Story .
 
-loria:nearTo a owl:SymmetricProperty .
-loria:nearTo rdfs:domain dbo:PopulatedPlace .
-loria:nearTo rdfs:range dbo:PopulatedPlace .
-city:Paris loria:nearTo city:Versailles .
+loria:nearTo rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+  rdfs:domain dbo:PopulatedPlace ;
+  rdfs:range dbo:PopulatedPlace .
