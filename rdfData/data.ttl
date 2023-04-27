@@ -2,6 +2,10 @@
 @prefix loria: <http://exemple.org/ontology/loria/> .
 @prefix pp: <http://example.org/people/> .
 @prefix ex: <http://example.org/> .
+@prefix city: <http://example.org/city/> .
 
 pp:jkrowling loria:write ex:harry_potter .
 ex:harry_potter skos:broaderTransitive ex:Fantacy .
+ex:Fantacy skos:broaderTransitive ex:Story .
+
+city:Paris loria:nearTo city:Versailles .
