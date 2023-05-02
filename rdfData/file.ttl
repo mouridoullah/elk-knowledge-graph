@@ -9,13 +9,13 @@
     owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file.ttl> .
 
 # Définition des concepts
-:Catastrophe rdf:type owl:Class ;
-    rdfs:label "Catastrophe"@fr ;
-    rdfs:subClassOf owl:Thing .
+#:Catastrophe rdf:type owl:Class ;
+#    rdfs:label "Catastrophe"@fr ;
+#    rdfs:subClassOf owl:Thing .
     # sous-classes de Catastrophe
     :CatastropheNaturelle rdf:type owl:Class ;
         rdfs:label "Catastrophe naturelle"@fr ;
-        rdfs:subClassOf :Catastrophe .
+#        rdfs:subClassOf :Catastrophe .
         # sous-classes de CatastropheNaturelle
         :Inondation rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Seisme rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
@@ -25,14 +25,14 @@
         :Secheresse rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :GlissementDeTerrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
         :Tsunami rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-    :CatastropheTechnologique rdf:type owl:Class ;
-        rdfs:label "Catastrophe technologique"@fr ;
-        rdfs:subClassOf :Catastrophe .
-        # sous-classes de CatastropheTechnologique
-        :AccidentNucleaire rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
-        :Explosion rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
-        :IncendieDeMaison rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
-        :AccidentDeTrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+#    :CatastropheTechnologique rdf:type owl:Class ;
+#        rdfs:label "Catastrophe technologique"@fr ;
+#        rdfs:subClassOf :Catastrophe .
+#        # sous-classes de CatastropheTechnologique
+#        :AccidentNucleaire rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+#        :Explosion rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+#        :IncendieDeMaison rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
+#        :AccidentDeTrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
 
 # :Victime rdf:type owl:Class ;
 #     rdfs:label "Victime"@fr ;
