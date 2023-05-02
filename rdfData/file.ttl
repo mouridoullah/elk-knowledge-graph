@@ -34,139 +34,139 @@
         :IncendieDeMaison rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
         :AccidentDeTrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheTechnologique .
 
-:Victime rdf:type owl:Class ;
-    rdfs:label "Victime"@fr ;
-    rdfs:subClassOf owl:Thing ; rdfs:subClassOf :DommagesHumains .
-    # sous-classes de Victime
-    :Mort rdf:type owl:Class ; rdfs:subClassOf :Victime .
-    :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victime .
-    :Disparu rdf:type owl:Class ; rdfs:subClassOf :Victime .
+# :Victime rdf:type owl:Class ;
+#     rdfs:label "Victime"@fr ;
+#     rdfs:subClassOf owl:Thing ; rdfs:subClassOf :DommagesHumains .
+#     # sous-classes de Victime
+#     :Mort rdf:type owl:Class ; rdfs:subClassOf :Victime .
+#     :Blesse rdf:type owl:Class ; rdfs:subClassOf :Victime .
+#     :Disparu rdf:type owl:Class ; rdfs:subClassOf :Victime .
 
-:Sauvetage rdf:type owl:Class ;
-    rdfs:label "Opération de sauvetage"@fr ;
-    rdfs:subClassOf owl:Thing .
-    # sous-classes de Sauvetage
-    :EquipeDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
-    :CentreDhebergement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
-    :CentreMedical rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
-    :Deplacement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
-    :CentreDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
-    :RechercheDeSurvivants rdf:type owl:Class ;
-        rdfs:label "Recherche de survivants"@fr ;
-        rdfs:subClassOf :Sauvetage .
-    :PremiersSecours rdf:type owl:Class ;
-        rdfs:label "Premiers secours"@fr ;
-        rdfs:subClassOf :Sauvetage .
-        # sous-classes de EquipeDeSecours
-        :HelicoptereDeSauvetage rdf:type owl:Class ;
-            rdfs:label "Hélicoptère de sauvetage"@fr ;
-            rdfs:subClassOf :EquipeDeSecours .
-        :EquipeDeSecoursTerrestre
-            rdf:type owl:Class ;
-            rdfs:label "Équipe de secours terrestre"@fr ;
-            rdfs:subClassOf :EquipeDeSecours .
-        :EquipeDeSecoursAquatique rdf:type owl:Class ;
-            rdfs:label "Équipe de secours aquatique"@fr ;
-            rdfs:subClassOf :EquipeDeSecours .
+# :Sauvetage rdf:type owl:Class ;
+#     rdfs:label "Opération de sauvetage"@fr ;
+#     rdfs:subClassOf owl:Thing .
+#     # sous-classes de Sauvetage
+#     :EquipeDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+#     :CentreDhebergement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+#     :CentreMedical rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+#     :Deplacement rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+#     :CentreDeSecours rdf:type owl:Class ; rdfs:subClassOf :Sauvetage .
+#     :RechercheDeSurvivants rdf:type owl:Class ;
+#         rdfs:label "Recherche de survivants"@fr ;
+#         rdfs:subClassOf :Sauvetage .
+#     :PremiersSecours rdf:type owl:Class ;
+#         rdfs:label "Premiers secours"@fr ;
+#         rdfs:subClassOf :Sauvetage .
+#         # sous-classes de EquipeDeSecours
+#         :HelicoptereDeSauvetage rdf:type owl:Class ;
+#             rdfs:label "Hélicoptère de sauvetage"@fr ;
+#             rdfs:subClassOf :EquipeDeSecours .
+#         :EquipeDeSecoursTerrestre
+#             rdf:type owl:Class ;
+#             rdfs:label "Équipe de secours terrestre"@fr ;
+#             rdfs:subClassOf :EquipeDeSecours .
+#         :EquipeDeSecoursAquatique rdf:type owl:Class ;
+#             rdfs:label "Équipe de secours aquatique"@fr ;
+#             rdfs:subClassOf :EquipeDeSecours .
 
-:Dommages rdf:type owl:Class ;
-    rdfs:label "Dommages"@fr ;
-    rdfs:subClassOf owl:Thing .
-    # sous-classes de Dommages
-    :PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
-    :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
-    :DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+# :Dommages rdf:type owl:Class ;
+#     rdfs:label "Dommages"@fr ;
+#     rdfs:subClassOf owl:Thing .
+#     # sous-classes de Dommages
+#     :PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+#     :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
+#     :DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
 
-    # Extension des définitions des dommages
-    :DommagesMateriels rdf:type owl:Class ;
-        rdfs:label "Dommages matériels"@fr ;
-        rdfs:subClassOf :Dommages .
-    :DommagesHumains rdf:type owl:Class ;
-        rdfs:label "Dommages humains"@fr ;
-        rdfs:subClassOf :Dommages .
+#     # Extension des définitions des dommages
+#     :DommagesMateriels rdf:type owl:Class ;
+#         rdfs:label "Dommages matériels"@fr ;
+#         rdfs:subClassOf :Dommages .
+#     :DommagesHumains rdf:type owl:Class ;
+#         rdfs:label "Dommages humains"@fr ;
+#         rdfs:subClassOf :Dommages .
 
-:Preparation rdf:type owl:Class ;
-    rdfs:label "Préparation"@fr ;
-    rdfs:subClassOf owl:Thing .
-    # sous-classes de Preparation
-    :PlanDevacuation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
-    :Formation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
-    :EquipementDePrevention rdf:type owl:Class ; rdfs:subClassOf :Preparation .
-    :Evaluation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+# :Preparation rdf:type owl:Class ;
+#     rdfs:label "Préparation"@fr ;
+#     rdfs:subClassOf owl:Thing .
+#     # sous-classes de Preparation
+#     :PlanDevacuation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+#     :Formation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+#     :EquipementDePrevention rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+#     :Evaluation rdf:type owl:Class ; rdfs:subClassOf :Preparation .
 
-        # Extension des définitions des évaluations
-        :EvaluationDesDommages rdf:type owl:Class ;
-            rdfs:label "Évaluation des dommages"@fr ;
-            rdfs:subClassOf :Evaluation .
-        :EvaluationDesRisques rdf:type owl:Class ;
-            rdfs:label "Évaluation des risques"@fr ;
-            rdfs:subClassOf :Evaluation .
+#         # Extension des définitions des évaluations
+#         :EvaluationDesDommages rdf:type owl:Class ;
+#             rdfs:label "Évaluation des dommages"@fr ;
+#             rdfs:subClassOf :Evaluation .
+#         :EvaluationDesRisques rdf:type owl:Class ;
+#             rdfs:label "Évaluation des risques"@fr ;
+#             rdfs:subClassOf :Evaluation .
 
-    :Retablissement rdf:type owl:Class ; rdfs:subClassOf :Preparation .
+#     :Retablissement rdf:type owl:Class ; rdfs:subClassOf :Preparation .
 
-        # Extension des définitions des rétablissements
-        :Reconstruction rdf:type owl:Class ;
-            rdfs:label "Reconstruction"@fr ;
-            rdfs:subClassOf :Retablissement .
-        :Rehabilitation rdf:type owl:Class ;
-            rdfs:label "Réhabilitation"@fr ;
-            rdfs:subClassOf :Retablissement .
-        :Relogement rdf:type owl:Class ;
-            rdfs:label "Relogement"@fr ;
-            rdfs:subClassOf :Retablissement .
+#         # Extension des définitions des rétablissements
+#         :Reconstruction rdf:type owl:Class ;
+#             rdfs:label "Reconstruction"@fr ;
+#             rdfs:subClassOf :Retablissement .
+#         :Rehabilitation rdf:type owl:Class ;
+#             rdfs:label "Réhabilitation"@fr ;
+#             rdfs:subClassOf :Retablissement .
+#         :Relogement rdf:type owl:Class ;
+#             rdfs:label "Relogement"@fr ;
+#             rdfs:subClassOf :Retablissement .
 
 
-    :EvacuationSanitaire rdf:type owl:Class ;
-        rdfs:label "Évacuation sanitaire"@fr ;
-        rdfs:subClassOf :PlanDevacuation .
-    :PlanCommunalDeSauvegarde rdf:type owl:Class ;
-        rdfs:label "Plan communal de sauvegarde"@fr ;
-        rdfs:subClassOf :PlanDevacuation .
-    :PlanDeContinuiteDesActivites rdf:type owl:Class ;
-        rdfs:label "Plan de continuité des activités"@fr ;
-        rdfs:subClassOf :Preparation .
+#     :EvacuationSanitaire rdf:type owl:Class ;
+#         rdfs:label "Évacuation sanitaire"@fr ;
+#         rdfs:subClassOf :PlanDevacuation .
+#     :PlanCommunalDeSauvegarde rdf:type owl:Class ;
+#         rdfs:label "Plan communal de sauvegarde"@fr ;
+#         rdfs:subClassOf :PlanDevacuation .
+#     :PlanDeContinuiteDesActivites rdf:type owl:Class ;
+#         rdfs:label "Plan de continuité des activités"@fr ;
+#         rdfs:subClassOf :Preparation .
 
-# Définition des propriétés
-:aCauseDe rdf:type owl:ObjectProperty ;
-    rdfs:label "à cause de"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range owl:Thing .
-:aPourVictime rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour victime"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Victime .
-:aEngendre rdf:type owl:ObjectProperty ;
-    rdfs:label "engendre"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Dommages . #:ampleur.
-:aPourSauvetage rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour sauvetage"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Sauvetage .
-:aPourPreparation rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour préparation"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Preparation .
-:aPourEvaluation rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour évaluation"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Evaluation .
-:aPourRétablissement rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour rétablissement"@fr ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range :Retablissement .
-:aPourCentreDhebergement rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour centre d'hébergement"@fr ;
-    rdfs:domain :Sauvetage ;
-    rdfs:range :CentreDhebergement .
-:aPourCentreMedical rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour centre médical"@fr ;
-    rdfs:domain :Sauvetage ;
-    rdfs:range :CentreMedical .
-:aPourVictime rdf:type owl:ObjectProperty ;
-    rdfs:label "a pour victime"@fr ;
-    rdfs:domain :Sauvetage ;
-    rdfs:range :Victime .
+# # Définition des propriétés
+# :aCauseDe rdf:type owl:ObjectProperty ;
+#     rdfs:label "à cause de"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range owl:Thing .
+# :aPourVictime rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour victime"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Victime .
+# :aEngendre rdf:type owl:ObjectProperty ;
+#     rdfs:label "engendre"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Dommages . #:ampleur.
+# :aPourSauvetage rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour sauvetage"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Sauvetage .
+# :aPourPreparation rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour préparation"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Preparation .
+# :aPourEvaluation rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour évaluation"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Evaluation .
+# :aPourRétablissement rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour rétablissement"@fr ;
+#     rdfs:domain :Catastrophe ;
+#     rdfs:range :Retablissement .
+# :aPourCentreDhebergement rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour centre d'hébergement"@fr ;
+#     rdfs:domain :Sauvetage ;
+#     rdfs:range :CentreDhebergement .
+# :aPourCentreMedical rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour centre médical"@fr ;
+#     rdfs:domain :Sauvetage ;
+#     rdfs:range :CentreMedical .
+# :aPourVictime rdf:type owl:ObjectProperty ;
+#     rdfs:label "a pour victime"@fr ;
+#     rdfs:domain :Sauvetage ;
+#     rdfs:range :Victime .
 
 
 
