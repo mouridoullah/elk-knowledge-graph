@@ -37,49 +37,49 @@
     rdfs:label "Condition"@fr ;
     rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
 
-:nombreDeMorts a owl:DatatypeProperty ;
+:nombreDeMorts a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Nombre de morts"@fr ;
     rdfs:comment "Le nombre de personnes décédées lors de la catastrophe"@fr .
 
-:nombreDeVictimes a owl:DatatypeProperty ;
+:nombreDeVictimes a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Nombre de victimes"@fr ;
     rdfs:comment "Le nombre de personnes affectées par la catastrophe"@fr .
 
-:nombreDeSurvivants a owl:DatatypeProperty ;
+:nombreDeSurvivants a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Nombre de survivants"@fr ;
     rdfs:comment "Le nombre de personnes qui ont survécu à la catastrophe"@fr .
 
-:nombreDeDisparus a owl:DatatypeProperty ;
+:nombreDeDisparus a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Nombre de disparus"@fr ;
     rdfs:comment "Le nombre de personnes qui sont portées disparues suite à la catastrophe"@fr .
 
-:nombreDeBlesses a owl:DatatypeProperty ;
+:nombreDeBlesses a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Nombre de blessés"@fr ;
     rdfs:comment "Le nombre de personnes blessées suite à la catastrophe"@fr .
 
-:coutDesDommages a owl:DatatypeProperty ;
+:coutDesDommages a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Côut des dommages"@fr ;
     rdfs:comment "Le montant des pertes et dommages suite à la catastrophe"@fr .
 
-:aPourCauseImmediate a owl:DatatypeProperty ;
+:aPourCauseImmediate a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "A pour cause immédiate"@fr ;
     rdfs:comment "ce qui est intervenu comme ayant le plus concrètement déterminé ou déclenché le sujet. Utilisé en conjonction avec « a pour cause » (sous-jacente) et « a comme facteur contributif ». Voir « Help:Modeling causes »."@fr .
 
-:aDetruit a owl:DatatypeProperty ;
+:aDetruit a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
     rdfs:label "Détruit"@fr ;
