@@ -78,19 +78,19 @@
 
 :aPourCauseImmediate a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
+    rdfs:range owl:Thing ;
     rdfs:label "A pour cause immédiate"@fr ;
     rdfs:comment "ce qui est intervenu comme ayant le plus concrètement déterminé ou déclenché le sujet. Utilisé en conjonction avec « a pour cause » (sous-jacente) et « a comme facteur contributif ». Voir « Help:Modeling causes »."@fr .
 
 :aDetruit a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
+    rdfs:range owl:Thing ;
     rdfs:label "Détruit"@fr ;
     rdfs:comment "Ce que l'événement a détruit"@fr .
 
 :aPourDate rdf:type owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:dateTime ;
+    rdfs:range xsd:date ;
     rdfs:label "La date"@fr ;
     rdfs:comment "La date de l'événement"@fr .
 
