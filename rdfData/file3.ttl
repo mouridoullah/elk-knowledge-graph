@@ -95,7 +95,7 @@
     rdfs:comment "La date de l'événement"@fr .
 
 :aLieu rdf:type owl:ObjectProperty ;
-    rdfs:domain :catastrophe ;
+    rdfs:domain :Catastrophe ;
     rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
     rdfs:label "Le lieu"@fr ;
     rdfs:comment "Le lieu de l'événement"@fr .
