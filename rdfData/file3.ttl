@@ -2,45 +2,47 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/catastrophe>
-        rdf:type owl:Ontology .
+        rdf:type owl:Ontology ;
+        owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file3.ttl> .
 
 :Catastrophe rdf:type owl:Class ;
         rdfs:subClassOf :Calamité,
                          :Danger,
                          :CauseDeDeces,
                          :Condition ;
-        owl:hasKey :numero ;
+        owl:hasKey :numero .
 
-        :nombreDeMorts rdf:type owl:DatatypeProperty ;
-                       rdfs:range xsd:nonNegativeInteger .
+:nombreDeMorts rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:nonNegativeInteger .
 
-        :nombreDeVictimes rdf:type owl:DatatypeProperty ;
-                          rdfs:range xsd:nonNegativeInteger .
+:nombreDeVictimes rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger .
 
-        :nombreDeSurvivants rdf:type owl:DatatypeProperty ;
-                            rdfs:range xsd:nonNegativeInteger .
+:nombreDeSurvivants rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger .
 
-        :nombreDeDisparus rdf:type owl:DatatypeProperty ;
-                          rdfs:range xsd:nonNegativeInteger .
+:nombreDeDisparus rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger .
 
-        :nombreDeBlesses rdf:type owl:DatatypeProperty ;
-                          rdfs:range xsd:nonNegativeInteger .
+:nombreDeBlesses rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger .
 
-        :coutDesDommages rdf:type owl:DatatypeProperty ;
-                          rdfs:range xsd:nonNegativeInteger .
+:coutDesDommages rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:nonNegativeInteger .
 
-        :coutImmediat rdf:type owl:DatatypeProperty ;
-                      rdfs:range xsd:nonNegativeInteger .
+:coutImmediat rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:nonNegativeInteger .
 
-        :aDetruit rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Catastrophe ;
-                  rdfs:range :Condition .
+:aDetruit rdf:type owl:ObjectProperty ;
+            rdfs:domain :Catastrophe ;
+            rdfs:range :Condition .
 
-        :implique rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Catastrophe ;
-                  rdfs:range :Condition .
+:implique rdf:type owl:ObjectProperty ;
+            rdfs:domain :Catastrophe ;
+            rdfs:range :Condition .
 
 :Calamité rdf:type owl:Class .
 
@@ -49,4 +51,3 @@
 :CauseDeDeces rdf:type owl:Class .
 
 :Condition rdf:type owl:Class .
-
