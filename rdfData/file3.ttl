@@ -1,53 +1,76 @@
-@prefix : <http://example.com/catastrophe#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://example.com/catastrophe>
-        rdf:type owl:Ontology ;
-        owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file3.ttl> .
-
 :Catastrophe rdf:type owl:Class ;
-        rdfs:subClassOf :Calamité,
-                         :Danger,
-                         :CauseDeDeces,
-                         :Condition ;
-        owl:hasKey :numero .
+    rdfs:subClassOf :Calamité,
+                        :Danger,
+                        :CauseDeDeces,
+                        :Condition ;
+    rdfs:label "Catastrophe"@fr ;
+    rdfs:comment "Un événement qui cause des dommages importants, des victimes et des perturbations de grande ampleur"@fr .
+    owl:hasKey :numero .
 
-:nombreDeMorts rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:nonNegativeInteger .
+:Calamité rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Calamité"@fr ;
+    rdfs:comment "Un événement qui provoque des dégâts matériels et/ou humains"@fr .
 
-:nombreDeVictimes rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger .
+:Danger rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Danger"@fr ;
+    rdfs:comment "Un événement qui représente un risque pour les personnes, les biens ou l'environnement"@fr .
 
-:nombreDeSurvivants rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger .
+:CauseDeDeces rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Cause de décès"@fr ;
+    rdfs:comment "Un événement qui entraîne la mort d'une ou plusieurs personnes"@fr .
 
-:nombreDeDisparus rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger .
+:Condition rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Condition"@fr ;
+    rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
 
-:nombreDeBlesses rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger .
+:nombreDeMorts a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Nombre de morts"@fr ;
+    rdfs:comment "Le nombre de personnes décédées lors de la catastrophe"@fr .
 
-:coutDesDommages rdf:type owl:DatatypeProperty ;
-                    rdfs:range xsd:nonNegativeInteger .
+:nombreDeVictimes a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Nombre de victimes"@fr ;
+    rdfs:comment "Le nombre de personnes affectées par la catastrophe"@fr .
 
-:coutImmediat rdf:type owl:DatatypeProperty ;
-                rdfs:range xsd:nonNegativeInteger .
+:nombreDeSurvivants a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Nombre de survivants"@fr ;
+    rdfs:comment "Le nombre de personnes qui ont survécu à la catastrophe"@fr .
 
-:aDetruit rdf:type owl:ObjectProperty ;
-            rdfs:domain :Catastrophe ;
-            rdfs:range :Condition .
+:nombreDeDisparus a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Nombre de disparus"@fr ;
+    rdfs:comment "Le nombre de personnes qui sont portées disparues suite à la catastrophe"@fr .
 
-:implique rdf:type owl:ObjectProperty ;
-            rdfs:domain :Catastrophe ;
-            rdfs:range :Condition .
+:nombreDeBlesses a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Nombre de blessés"@fr ;
+    rdfs:comment "Le nombre de personnes blessées suite à la catastrophe"@fr .
 
-:Calamité rdf:type owl:Class .
+:coutDesDommages a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Côut des dommages"@fr ;
+    rdfs:comment "Le montant des pertes et dommages suite à la catastrophe"@fr .
 
-:Danger rdf:type owl:Class .
+:aPourCauseImmediate a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "A pour cause immédiate"@fr ;
+    rdfs:comment "ce qui est intervenu comme ayant le plus concrètement déterminé ou déclenché le sujet. Utilisé en conjonction avec « a pour cause » (sous-jacente) et « a comme facteur contributif ». Voir « Help:Modeling causes »."@fr .
 
-:CauseDeDeces rdf:type owl:Class .
-
-:Condition rdf:type owl:Class .
+:aDetruit a owl:DatatypeProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:int ;
+    rdfs:label "Détruit"@fr ;
+    rdfs:comment "Ce que l'événement a détruit"@fr .
