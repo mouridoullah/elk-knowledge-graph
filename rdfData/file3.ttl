@@ -37,6 +37,8 @@
     rdfs:label "Condition"@fr ;
     rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
 
+:Seisme rdf:type owl:Class ; rdfs:subClassOf :Catastrophe.
+
 :nombreDeMorts a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range xsd:int ;
@@ -69,18 +71,18 @@
 
 :coutDesDommages a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
+    rdfs:range xsd:float ;
     rdfs:label "Côut des dommages"@fr ;
     rdfs:comment "Le montant des pertes et dommages suite à la catastrophe"@fr .
 
 :aPourCauseImmediate a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
+    rdfs:range xsd:float ;
     rdfs:label "A pour cause immédiate"@fr ;
     rdfs:comment "ce qui est intervenu comme ayant le plus concrètement déterminé ou déclenché le sujet. Utilisé en conjonction avec « a pour cause » (sous-jacente) et « a comme facteur contributif ». Voir « Help:Modeling causes »."@fr .
 
-:aDetruit a owl:ObjectProperty ;
-    rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
-    rdfs:label "Détruit"@fr ;
-    rdfs:comment "Ce que l'événement a détruit"@fr .
+#:aDetruit a owl:ObjectProperty ;
+#    rdfs:domain :Catastrophe ;
+#    rdfs:range xsd:int ;
+#    rdfs:label "Détruit"@fr ;
+#    rdfs:comment "Ce que l'événement a détruit"@fr .
