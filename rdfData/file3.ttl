@@ -112,7 +112,7 @@
     rdfs:label "Le lieu"@fr ;
     rdfs:comment "Le lieu de l'événement"@fr .
 
-:nombreDeSecouristes rdf:type owl:DatatypeProperty ;
+:nombreDeSecouristes rdf:type owl:ObjectProperty ;
     rdfs:label "Nombre de secouristes nécessaires"@fr ;
     rdfs:comment "Cette propriété indique le nombre de secouristes nécessaires pour effectuer une opération de sauvetage"@fr ;
     rdfs:range xsd:int , :Catastrophe ;
