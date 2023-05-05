@@ -37,7 +37,19 @@
     rdfs:label "Condition"@fr ;
     rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
 
+:Sauvetage rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Sauvetage"@fr ;
+    rdfs:comment "Cette classe décrit les opérations de sauvetage nécessaires lors d'une catastrophe"@fr .
+
+
+
+
 :Seisme rdf:type owl:Class ; rdfs:subClassOf :Catastrophe .
+
+:Sauvetage_Seisme rdf:type owl:Class ;
+    rdfs:subClassOf :Sauvetage ;
+    rdfs:label "Sauvetage pour un séisme"@fr .
 
 
 :nombreDeMorts a owl:ObjectProperty ;
@@ -72,7 +84,7 @@
 
 :coutDesDommages a owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
-    rdfs:range xsd:int ;
+    rdfs:range xsd:float ;
     rdfs:label "Côut des dommages"@fr ;
     rdfs:comment "Le montant des pertes et dommages suite à la catastrophe"@fr .
 
@@ -99,3 +111,9 @@
     rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
     rdfs:label "Le lieu"@fr ;
     rdfs:comment "Le lieu de l'événement"@fr .
+
+:nombreDeSecouristes rdf:type owl:DatatypeProperty ;
+    rdfs:label "Nombre de secouristes nécessaires"@fr ;
+    rdfs:comment "Cette propriété indique le nombre de secouristes nécessaires pour effectuer une opération de sauvetage"@fr ;
+    rdfs:range xsd:int , :Catastrophe ;
+    rdfs:domain :Sauvetage .
