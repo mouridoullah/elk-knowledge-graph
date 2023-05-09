@@ -67,21 +67,21 @@
     rdfs:comment "Les morts sont des victimes qui ont perdu la vie dans une catastrophe." ;
     rdfs:subClassOf :Victimes ;
     owl:DatatypeProperty :nombreDeMort ;
-    rdfs:range xsd:nonNegativeInteger .
+    rdfs:range xsd:int .
 
 :Blesses rdf:type owl:Class ;
     rdfs:label "Blessés" ;
     rdfs:comment "Les blessés sont des victimes qui ont été blessées lors d'une catastrophe." ;
     rdfs:subClassOf :Victimes ;
     owl:DatatypeProperty :nombreDeBlesse ;
-    rdfs:range xsd:nonNegativeInteger .
+    rdfs:range xsd:int .
 
 :Disparus rdf:type owl:Class ;
     rdfs:label "Disparus" ;
     rdfs:comment "Les disparus sont des victimes dont le sort est inconnu après une catastrophe." ;
     rdfs:subClassOf :Victimes ;
     owl:DatatypeProperty :nombreDeDisparus ;
-    rdfs:range xsd:nonNegativeInteger .
+    rdfs:range xsd:int .
 
 # Définition de la classe Sauvetage
 :Sauvetage rdf:type owl:Class ;
@@ -98,7 +98,7 @@
   rdfs:label "Effectif pour soigner" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour soigner les blesse." ;
   rdfs:domain :Soigner ;
-  rdfs:range xsd:integer .
+  rdfs:range xsd:int .
 
 :operationDeSoins rdf:type owl:ObjectProperty ;
     rdfs:domain :Blesses ;
@@ -115,7 +115,7 @@
   rdfs:label "Effectif de la recherche" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour la recherche des disparus." ;
   rdfs:domain :Recherche ;
-  rdfs:range xsd:integer .
+  rdfs:range xsd:int .
 
 :operationDeRecherche rdf:type owl:ObjectProperty ;
     rdfs:domain :Disparus ;
@@ -132,7 +132,7 @@
   rdfs:label "Effectif pour le traitement des morts" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour les morts." ;
   rdfs:domain :RecupererIdentifierTraiter ;
-  rdfs:range xsd:integer .
+  rdfs:range xsd:int .
 
 :operationTraitementMorts rdf:type owl:ObjectProperty ;
     rdfs:domain :Morts ;
