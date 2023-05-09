@@ -94,7 +94,7 @@
   rdfs:label "Soigner" ;
   rdfs:comment "L'opération de soins pour les blessés." .
 
-:effectifSoign rdf:type owl:DatatypeProperty ;
+:effectifASoinger rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif pour soigner" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour soigner les blesse." ;
   rdfs:domain :Soigner ;
@@ -111,7 +111,7 @@
   rdfs:label "Recherche" ;
   rdfs:comment "L'opération de recherche pour les disparus." .
 
-:effectifRecherche rdf:type owl:DatatypeProperty ;
+:effectifRecherche rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif de la recherche" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour la recherche des disparus." ;
   rdfs:domain :Recherche ;
@@ -128,7 +128,7 @@
   rdfs:label "Recuperer, identifier et traiter les morts" ;
   rdfs:comment "L'opération de récupération pour les morts." .
 
-:effectifRecupererIdentifierTraiter rdf:type owl:DatatypeProperty ;
+:effectifRecupererIdentifierTraiter rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif pour le traitement des morts" ;
   rdfs:comment "Le nombre de secouristes mobilisés pour les morts." ;
   rdfs:domain :RecupererIdentifierTraiter ;
