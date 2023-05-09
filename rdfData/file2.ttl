@@ -1,0 +1,141 @@
+@prefix : <http://example.com/catastrophe#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://example.com/catastrophe>
+        rdf:type owl:Ontology ;
+        owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file2.ttl> .
+
+
+:Catastrophe rdf:type owl:Class ;
+    rdfs:subClassOf :Calamité,
+                        :Danger,
+                        :CauseDeDeces,
+                        :Condition ;
+    rdfs:label "Catastrophe"@fr ;
+    rdfs:comment "Un événement qui cause des dommages importants, des victimes et des perturbations de grande ampleur"@fr ;
+    owl:hasKey :numero .
+
+:Calamité rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Calamité"@fr ;
+    rdfs:comment "Un événement qui provoque des dégâts matériels et/ou humains"@fr .
+
+:Danger rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Danger"@fr ;
+    rdfs:comment "Un événement qui représente un risque pour les personnes, les biens ou l'environnement"@fr .
+
+:CauseDeDeces rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Cause de décès"@fr ;
+    rdfs:comment "Un événement qui entraîne la mort d'une ou plusieurs personnes"@fr .
+
+:Condition rdf:type owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    rdfs:label "Condition"@fr ;
+    rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
+
+:aPourDate rdf:type owl:ObjectProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range xsd:date ;
+    rdfs:label "La date"@fr ;
+    rdfs:comment "La date de l'événement"@fr .
+
+:aLieu rdf:type owl:ObjectProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+    rdfs:label "Le lieu"@fr ;
+    rdfs:comment "Le lieu de l'événement"@fr .
+
+:Victimes rdf:type owl:Class ;
+    rdfs:label "Victimes" ;
+    rdfs:comment "Les victimes sont des personnes touchées par une catastrophe, qui peuvent être blessées, mortes ou disparues." ;
+    rdfs:subClassOf owl:Thing .
+
+:Implique a owl:ObjectProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Victimes ;
+    rdfs:label "Nombre de survivants"@fr ;
+    rdfs:comment "Le nombre de personnes qui ont survécu à la catastrophe"@fr .
+
+:Morts rdf:type owl:Class ;
+    rdfs:label "Morts" ;
+    rdfs:comment "Les morts sont des victimes qui ont perdu la vie dans une catastrophe." ;
+    rdfs:subClassOf :Victimes ;
+    owl:DatatypeProperty :nombreDeMort ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:Blesses rdf:type owl:Class ;
+    rdfs:label "Blessés" ;
+    rdfs:comment "Les blessés sont des victimes qui ont été blessées lors d'une catastrophe." ;
+    rdfs:subClassOf :Victimes ;
+    owl:DatatypeProperty :nombreDeBlesse ;
+    rdfs:range xsd:nonNegativeInteger .
+
+:Disparus rdf:type owl:Class ;
+    rdfs:label "Disparus" ;
+    rdfs:comment "Les disparus sont des victimes dont le sort est inconnu après une catastrophe." ;
+    rdfs:subClassOf :Victimes ;
+    owl:DatatypeProperty :nombreDeDisparus ;
+    rdfs:range xsd:nonNegativeInteger .
+
+# Définition de la classe Sauvetage
+:Sauvetage rdf:type owl:Class ;
+  rdfs:label "Sauvetage" ;
+  rdfs:comment "Les opérations de sauvetage après une catastrophe." .
+
+# Définition des sous-classes de Sauvetage
+:Soigner rdf:type owl:Class ;
+  rdfs:subClassOf :Sauvetage ;
+  rdfs:label "Soigner" ;
+  rdfs:comment "L'opération de soins pour les blessés." .
+
+:effectifSoign rdf:type owl:DatatypeProperty ;
+  rdfs:label "Effectif pour soigner" ;
+  rdfs:comment "Le nombre de secouristes mobilisés pour soigner les blesse." ;
+  rdfs:domain :Soigner ;
+  rdfs:range xsd:integer .
+
+:operationDeSoins rdf:type owl:ObjectProperty ;
+    rdfs:domain :Blesses ;
+    rdfs:range :Soigner ;
+    rdfs:label "Opération de soins associée" ;
+    rdfs:comment "L'opération de soins pour les blessés." .
+
+:Recherche rdf:type owl:Class ;
+  rdfs:subClassOf :Sauvetage ;
+  rdfs:label "Recherche" ;
+  rdfs:comment "L'opération de recherche pour les disparus." .
+
+:effectifRecherche rdf:type owl:DatatypeProperty ;
+  rdfs:label "Effectif de la recherche" ;
+  rdfs:comment "Le nombre de secouristes mobilisés pour la recherche des disparus." ;
+  rdfs:domain :Recherche ;
+  rdfs:range xsd:integer .
+
+:operationDeRecherche rdf:type owl:ObjectProperty ;
+    rdfs:domain :Disparus ;
+    rdfs:range :Recherche ;
+    rdfs:label "Opération de recherche associée" ;
+    rdfs:comment "L'opération de recherche associée à un groupe de disparus." .
+
+:RecupererIdentifierTraiter rdf:type owl:Class ;
+  rdfs:subClassOf :Sauvetage ;
+  rdfs:label "Recuperer, identifier et traiter les morts" ;
+  rdfs:comment "L'opération de récupération pour les morts." .
+
+:effectifRecupererIdentifierTraiter rdf:type owl:DatatypeProperty ;
+  rdfs:label "Effectif pour le traitement des morts" ;
+  rdfs:comment "Le nombre de secouristes mobilisés pour les morts." ;
+  rdfs:domain :RecupererIdentifierTraiter ;
+  rdfs:range xsd:integer .
+
+:operationTraitementMorts rdf:type owl:ObjectProperty ;
+    rdfs:domain :Morts ;
+    rdfs:range :RecupererIdentifierTraiter;
+    rdfs:label "Opération de Traitement des morts" ;
+    rdfs:comment "L'opération de secourisme." .
