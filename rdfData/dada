@@ -1,0 +1,13 @@
+@prefix : <http://www.semanticweb.org/ontologies/2023/4/seisme#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO_> .
+
+:bfo a owl:Ontology ;
+    owl:imports <https://raw.githubusercontent.com/BFO-ontology/BFO/master/bfo.owl> .
+
+:seisme1 a :Catastrophe ;
+    :date [        a bfo:TemporalRegion ;        owl:hasValue "2023-05-09T12:00:00"^^xsd:dateTime    ] ;
+    :lieu "Paris, France" .
