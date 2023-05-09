@@ -3,24 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO_>
 
-:MyOntology a owl:Ontology ;
-    owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file2.ttl> .
+:bfo a owl:Ontology ;
+    owl:imports <https://raw.githubusercontent.com/BFO-ontology/BFO/master/bfo.owl> .
 
-# Définition des concepts
-:Catastrophe rdf:type owl:Class ;
-   rdfs:label "Catastrophe"@fr ;
-   rdfs:subClassOf owl:Thing .
-    # sous-classes de Catastrophe
-    :CatastropheNaturelle rdf:type owl:Class ;
-        rdfs:label "Catastrophe naturelle"@fr ;
-        rdfs:subClassOf :Catastrophe .
-        # sous-classes de CatastropheNaturelle
-        :Inondation rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :Seisme rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :IncendieDeForet rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :Tempete rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :Cyclone rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :Secheresse rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :GlissementDeTerrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
-        :Tsunami rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+:seisme1 a :Catastrophe ;
+    :date [        a bfo:TemporalRegion ;        owl:hasValue "2023-05-09T12:00:00"^^xsd:dateTime    ] ;
+    :lieu "Paris, France" .
