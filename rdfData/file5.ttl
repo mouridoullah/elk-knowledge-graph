@@ -81,7 +81,7 @@
   rdfs:domain :Victimes ;
   rdfs:range xsd:int .
 
-:Implique a owl:ObjectProperty ;
+:Implique rdf:type owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range :Victimes ;
     rdfs:label "Nombre de survivants"@fr ;
@@ -167,7 +167,7 @@
     rdfs:range xsd:int ;
     rdfs:comment "Le coût associé au dommage causé par l'événement"@fr .
 
-:Entraine a owl:ObjectProperty ;
+:Entraine rdf:type owl:ObjectProperty ;
     rdfs:domain :Catastrophe ;
     rdfs:range :Dommages ;
     rdfs:label "Consequence d'une catastrophe"@fr ;
@@ -182,6 +182,14 @@
 :Reconstruction rdf:type owl:Class ;
     rdfs:label "Reconstruction"@fr ;
     rdfs:subClassOf :Retablissement .
+:ReconstructionDeBatiments rdf:type owl:Class ;
+    rdfs:label "Reconstruction de bâtiments"@fr ;
+    rdfs:subClassOf :Reconstruction ;
+    rdfs:comment "Type de rétablissement pour les dommages de type destruction de bâtiments"@fr .
+:ReconstructionInfrastructure rdf:type owl:Class ;
+    rdfs:label "Reconstruction d'infrastructures"@fr ;
+    rdfs:subClassOf :Reconstruction ;
+    rdfs:comment "Type de rétablissement pour les dommages de type destruction d'infrastructures"@fr .
 :RestaurerLesEcosystèmes rdf:type owl:Class ;
     rdfs:label "Restaurer Les Ecosystèmes"@fr ;
     rdfs:subClassOf :Retablissement .
@@ -191,3 +199,9 @@
 :EvaluerIndemniserLesVictimes rdf:type owl:Class ;
     rdfs:label "Relogement"@fr ;
     rdfs:subClassOf :Retablissement .
+
+:aPourRetablissement rdf:type owl:ObjectProperty ;
+    rdfs:label "a pour rétablissement"@fr ;
+    rdfs:domain :Dommages ;
+    rdfs:range :Retablissement ;
+    rdfs:comment "Propriété qui lie un dommage à son type de rétablissement"@fr .
