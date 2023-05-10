@@ -159,6 +159,7 @@
     rdfs:label "Dommages matériels"@fr ;
     rdfs:subClassOf :Dommages .
 :DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
+:DestructionInfrastructure rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
 
 :coutDommage rdf:type owl:ObjectProperty ;
     rdfs:label "Coût du dommage"@fr ;
@@ -171,3 +172,22 @@
     rdfs:range :Dommages ;
     rdfs:label "Consequence d'une catastrophe"@fr ;
     rdfs:comment "Dégâts matériels causés par une catastrophe"@fr .
+
+:Retablissement rdf:type owl:Class ; 
+    rdfs:subClassOf owl:Thing; 
+    rdfs:label "Retablissement"@fr;
+    rdfs:comment "Retablissement et réparation des dommages"@fr.
+
+# Extension des définitions des rétablissements
+:Reconstruction rdf:type owl:Class ;
+    rdfs:label "Reconstruction"@fr ;
+    rdfs:subClassOf :Retablissement .
+:RestaurerLesEcosystèmes rdf:type owl:Class ;
+    rdfs:label "Restaurer Les Ecosystèmes"@fr ;
+    rdfs:subClassOf :Retablissement .
+:Relogement rdf:type owl:Class ;
+    rdfs:label "Relogement"@fr ;
+    rdfs:subClassOf :Retablissement .
+:EvaluerIndemniserLesVictimes rdf:type owl:Class ;
+    rdfs:label "Relogement"@fr ;
+    rdfs:subClassOf :Retablissement .
