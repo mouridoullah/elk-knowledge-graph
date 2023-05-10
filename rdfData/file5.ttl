@@ -59,13 +59,13 @@
     rdfs:comment "Un état qui peut causer des dommages ou des perturbations"@fr .
 
 :aPourDate rdf:type owl:ObjectProperty ;
-    rdfs:domain :Catastrophe ;
+    rdfs:domain :Catastrophe, :Sauvetage ;
     rdfs:range xsd:date ;
     rdfs:label "La date"@fr ;
     rdfs:comment "La date de l'événement"@fr .
 
 :aLieu rdf:type owl:ObjectProperty ;
-    rdfs:domain :Catastrophe ;
+    rdfs:domain :Catastrophe, :Sauvetage;
     rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
     rdfs:label "Le lieu"@fr ;
     rdfs:comment "Le lieu de l'événement"@fr .
@@ -147,13 +147,27 @@
   rdfs:range xsd:int .
 
 # Définition de la classe Dommage
-:Dommage rdf:type owl:Class ;
+:Dommages rdf:type owl:Class ;
     rdfs:label "Dommage"@fr ;
     rdfs:subClassOf owl:Thing;
     rdfs:comment "Classe représentant un dommage matériel causé à un objet ou une propriété"@fr .
 
+# sous-classes de Dommages
+:PerteEconomique rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+:DomagesEnvironnementaux rdf:type owl:Class ; rdfs:subClassOf :Dommages .
+:DommagesMateriels rdf:type owl:Class ;
+    rdfs:label "Dommages matériels"@fr ;
+    rdfs:subClassOf :Dommages .
+:DestructionDeBatiments rdf:type owl:Class ; rdfs:subClassOf :DommagesMateriels .
+
 :coutDommage rdf:type owl:ObjectProperty ;
     rdfs:label "Coût du dommage"@fr ;
-    rdfs:domain :Dommage ;
+    rdfs:domain :Dommages ;
     rdfs:range xsd:int ;
     rdfs:comment "Le coût associé au dommage causé par l'événement"@fr .
+
+:Entraine a owl:ObjectProperty ;
+    rdfs:domain :Catastrophe ;
+    rdfs:range :Dommages ;
+    rdfs:label "Consequence d'une catastrophe"@fr ;
+    rdfs:comment "Dégâts matériels causés par une catastrophe"@fr .
