@@ -10,3 +10,15 @@
 :InstanceDePompiers rdf:type :Pompiers ;
           rdfs:label "Pompier" ;
           :NombreDePompiers "100"^^xsd:int .
+
+:InstanceDeMédecins rdf:type :Médecin ;
+          rdfs:label "Médecin" ;
+          :NombreDeMédecins "100"^^xsd:int .
+
+:InstanceDeMilitaires rdf:type :Militaire ;
+          rdfs:label "Militaire" ;
+          :NombreDeMilitaires "100"^^xsd:int .
+
+:InstanceDeInfirmiers rdf:type :Infirmier ;
+          rdfs:label "Infirmier" ;
+          :NombreDInfirmiers "100"^^xsd:int .
