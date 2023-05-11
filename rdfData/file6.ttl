@@ -4,10 +4,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Import de l'ontologie
-@prefix file5: <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file5.ttl> .
-owl:imports file5:.
+@prefix ont: <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file5.ttl> .
 
 # Définition de l'instance de Pompiers avec la propriété NombreDePompiers
 :InstanceDePompiers rdf:type owl:NamedIndividual ;
-          rdf:type :Pompiers ;
-          :NombreDePompiers "100"^^xsd:int .
+          rdf:type ont:Pompiers ;
+          ont:NombreDePompiers "100"^^xsd:int .
