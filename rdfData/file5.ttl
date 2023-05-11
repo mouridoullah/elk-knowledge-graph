@@ -29,6 +29,7 @@
     :Secheresse rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
     :GlissementDeTerrain rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
     :Tsunami rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
+    :Cyclone rdf:type owl:Class ; rdfs:subClassOf :CatastropheNaturelle .
 :CatastropheTechnologique rdf:type owl:Class ;
     rdfs:label "Catastrophe technologique"@fr ;
     rdfs:subClassOf :Catastrophe .
