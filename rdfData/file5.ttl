@@ -146,6 +146,53 @@
   rdfs:domain :Sauvetage ;
   rdfs:range xsd:int .
 
+# Définition des classes Pompier, Médecin, Militaire et Infirmier
+:Pompiers rdf:type owl:Class ;
+  rdfs:label "Pompier" ;
+  rdfs:comment "Personnel de secours spécialisé dans l'extinction d'incendies." .
+
+:Médecin rdf:type owl:Class ;
+  rdfs:label "Médecin" ;
+  rdfs:comment "Personnel de secours spécialisé dans les soins médicaux." .
+
+:Militaire rdf:type owl:Class ;
+  rdfs:label "Militaire" ;
+  rdfs:comment "Personnel de secours spécialisé dans les opérations militaires." .
+
+:Infirmier rdf:type owl:Class ;
+  rdfs:label "Infirmier" ;
+  rdfs:comment "Personnel de secours spécialisé dans les soins infirmiers." .
+
+# Définition de la propriété NombreDeSecouriste pour chaque type de personnel
+:NombreDePompiers rdf:type owl:ObjectProperty ;
+  rdfs:label "Effectif des pompiers" ;
+  rdfs:comment "Le nombre de pompiers mobilisés." ;
+  rdfs:domain :Pompiers ;
+  rdfs:range xsd:int .
+
+:NombreDeMédecins rdf:type owl:ObjectProperty ;
+  rdfs:label "Effectif des médecins" ;
+  rdfs:comment "Le nombre de médecins mobilisés." ;
+  rdfs:domain :Médecin ;
+  rdfs:range xsd:int .
+
+:NombreDeMilitaires rdf:type owl:ObjectProperty ;
+  rdfs:label "Effectif des militaires" ;
+  rdfs:comment "Le nombre de militaires mobilisés." ;
+  rdfs:domain :Militaire ;
+  rdfs:range xsd:int .
+
+:NombreDInfirmiers rdf:type owl:ObjectProperty ;
+  rdfs:label "Effectif des infirmiers" ;
+  rdfs:comment "Le nombre d'infirmiers mobilisés." ;
+  rdfs:domain :Infirmier ;
+  rdfs:range xsd:int .
+
+:EstConsitutéDe rdf:type owl:ObjectProperty ;
+    rdfs:domain :Pompiers, :Médecin, :Militaire, :Infirmier ;
+    rdfs:range :Sauvetage.
+
+
 # Définition de la classe Dommage
 :Dommages rdf:type owl:Class ;
     rdfs:label "Dommage"@fr ;
