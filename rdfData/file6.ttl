@@ -7,5 +7,6 @@
 @prefix ont: <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file5.ttl#> .
 
 # Définition de l'instance de Pompiers avec la propriété NombreDePompiers
-:InstanceDePompiers rdf:type ont:Pompiers ;
-          ont:NombreDePompiers "100"^^xsd:int .
+:InstanceDePompiers rdf:type :Pompiers ;
+          rdfs:label "Pompier" ;
+          :NombreDePompiers "100"^^xsd:int .
