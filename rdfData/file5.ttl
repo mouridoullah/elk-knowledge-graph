@@ -112,33 +112,41 @@
   rdfs:label "Soigner" ;
   rdfs:comment "L'opération de soins pour les blessés." .
 
-:operationDeSoins rdf:type owl:ObjectProperty ;
+:OperationDeSauvetage rdf:type owl:ObjectProperty ;
+    rdfs:domain :Sauvetage ;
+    rdfs:range :Victimes ;
+    rdfs:label "Opération Sauvetage" .
+
+:OperationDeSoins rdf:type owl:ObjectProperty ;
     rdfs:domain :Blesses ;
     rdfs:range :Soigner ;
     rdfs:label "Opération de soins associée" ;
-    rdfs:comment "L'opération de soins pour les blessés." .
+    rdfs:comment "L'opération de soins pour les blessés." ;
+    rdfs:subPropertyOf :OperationDeSauvetage .
 
 :Recherche rdf:type owl:Class ;
   rdfs:subClassOf :Sauvetage ;
   rdfs:label "Recherche" ;
   rdfs:comment "L'opération de recherche pour les disparus." .
 
-:operationDeRecherche rdf:type owl:ObjectProperty ;
+:OperationDeRecherche rdf:type owl:ObjectProperty ;
     rdfs:domain :Disparus ;
     rdfs:range :Recherche ;
     rdfs:label "Opération de recherche associée" ;
-    rdfs:comment "L'opération de recherche associée à un groupe de disparus." .
+    rdfs:comment "L'opération de recherche associée à un groupe de disparus." ;
+    rdfs:subPropertyOf :OperationDeSauvetage .
 
 :RecupererIdentifierTraiter rdf:type owl:Class ;
   rdfs:subClassOf :Sauvetage ;
   rdfs:label "Recuperer, identifier et traiter les morts" ;
   rdfs:comment "L'opération de récupération pour les morts." .
 
-:operationTraitementMorts rdf:type owl:ObjectProperty ;
+:OperationTraitementMorts rdf:type owl:ObjectProperty ;
     rdfs:domain :Morts ;
     rdfs:range :RecupererIdentifierTraiter;
     rdfs:label "Opération de Traitement des morts" ;
-    rdfs:comment "L'opération de secourisme." .
+    rdfs:comment "L'opération de secourisme." ;
+    rdfs:subPropertyOf :OperationDeSauvetage .
 
 :NombreDeSecouriste rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif des secouriste" ;
@@ -168,25 +176,29 @@
   rdfs:label "Effectif des pompiers" ;
   rdfs:comment "Le nombre de pompiers mobilisés." ;
   rdfs:domain :Pompiers ;
-  rdfs:range xsd:int .
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf :NombreDeSecouriste .
 
 :NombreDeMédecins rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif des médecins" ;
   rdfs:comment "Le nombre de médecins mobilisés." ;
   rdfs:domain :Médecin ;
-  rdfs:range xsd:int .
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf :NombreDeSecouriste .
 
 :NombreDeMilitaires rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif des militaires" ;
   rdfs:comment "Le nombre de militaires mobilisés." ;
   rdfs:domain :Militaire ;
-  rdfs:range xsd:int .
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf :NombreDeSecouriste .
 
 :NombreDInfirmiers rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif des infirmiers" ;
   rdfs:comment "Le nombre d'infirmiers mobilisés." ;
   rdfs:domain :Infirmier ;
-  rdfs:range xsd:int .
+  rdfs:range xsd:int ;
+  rdfs:subPropertyOf :NombreDeSecouriste .
 
 :EstConsitutéDe rdf:type owl:ObjectProperty ;
     rdfs:domain :Pompiers, :Médecin, :Militaire, :Infirmier ;
