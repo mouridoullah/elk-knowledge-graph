@@ -173,31 +173,10 @@
   rdfs:comment "Personnel de secours spécialisé dans les soins infirmiers." .
 
 # Définition de la propriété NombreDeSecouriste pour chaque type de personnel
-:NombreDePompiers rdf:type owl:ObjectProperty ;
-  rdfs:label "Effectif des pompiers" ;
+:NombreDindividus rdf:type owl:ObjectProperty ;
+  rdfs:label "Effectif des secouriste" ;
   rdfs:comment "Le nombre de pompiers mobilisés." ;
-  rdfs:domain :Pompiers ;
-  rdfs:range xsd:int ;
-  rdfs:subPropertyOf :NombreDeSecouriste .
-
-:NombreDeMédecins rdf:type owl:ObjectProperty ;
-  rdfs:label "Effectif des médecins" ;
-  rdfs:comment "Le nombre de médecins mobilisés." ;
-  rdfs:domain :Médecin ;
-  rdfs:range xsd:int ;
-  rdfs:subPropertyOf :NombreDeSecouriste .
-
-:NombreDeMilitaires rdf:type owl:ObjectProperty ;
-  rdfs:label "Effectif des militaires" ;
-  rdfs:comment "Le nombre de militaires mobilisés." ;
-  rdfs:domain :Militaire ;
-  rdfs:range xsd:int ;
-  rdfs:subPropertyOf :NombreDeSecouriste .
-
-:NombreDInfirmiers rdf:type owl:ObjectProperty ;
-  rdfs:label "Effectif des infirmiers" ;
-  rdfs:comment "Le nombre d'infirmiers mobilisés." ;
-  rdfs:domain :Infirmier ;
+  rdfs:domain :Pompiers, :Militaire, :Médecin, :Infirmier;
   rdfs:range xsd:int ;
   rdfs:subPropertyOf :NombreDeSecouriste .
 
