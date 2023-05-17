@@ -152,8 +152,12 @@
 :NombreDeSecouriste rdf:type owl:ObjectProperty ;
   rdfs:label "Effectif des secouriste" ;
   rdfs:comment "Le nombre de secouristes mobilisés." ;
-  rdfs:domain :Sauvetage ;
+  rdfs:domain :EquipeDeSecours ;
   rdfs:range xsd:int .
+
+:Effectue rdf:type owl:ObjectProperty ;
+          rdfs:domain :EquipeDeSecours ;
+          rdfs:range :Sauvetage .
 
 # Définition des classes Pompier, Médecin, Militaire et Infirmier
 :Pompiers rdf:type owl:Class ;
@@ -182,7 +186,7 @@
 
 :EstConsitutéDe rdf:type owl:ObjectProperty ;
     rdfs:domain :Pompiers, :Médecin, :Militaire, :Infirmier ;
-    rdfs:range :Sauvetage.
+    rdfs:range :EquipeDeSecours.
 
 
 # Définition de la classe Dommage
