@@ -108,6 +108,10 @@
   rdfs:label "Sauvetage" ;
   rdfs:comment "Les opérations de sauvetage après une catastrophe." .
 
+:EquipeDeSecours rdf:type owl:Class ;
+                 rdfs:label "Equipe de secours"@fr ;
+                 rdfs:comment "Une équipe de professionnels formée et équipée pour intervenir lors de situations d'urgence ou de catastrophes afin de fournir une assistance et des secours aux personnes en danger."@fr .
+
 :Soigner rdf:type owl:Class ;
   rdfs:subClassOf :Sauvetage ;
   rdfs:label "Soigner" ;
