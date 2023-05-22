@@ -5,9 +5,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-<http://example.com/catastrophe>
-        rdf:type owl:Ontology ;
-        owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file4.ttl> .
+# <http://example.com/catastrophe>
+#        rdf:type owl:Ontology ;
+#        owl:imports <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file4.ttl> .
 
 
 :Catastrophe rdf:type owl:Class ;
