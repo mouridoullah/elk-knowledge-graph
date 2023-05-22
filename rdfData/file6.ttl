@@ -7,18 +7,18 @@
 @prefix ont: <https://raw.githubusercontent.com/mouridoullah/elk-knowledge-graph/main/rdfData/file5.ttl#> .
 
 # Définition de l'instance de Pompiers avec la propriété NombreDePompiers
-:InstanceDePompiers rdf:type :Pompiers ;
+:InstanceDePompiers rdf:type ont:Pompiers ;
           rdfs:label "Pompier" ;
-          :NombreDindividus "100"^^xsd:int .
+          ont:NombreDindividus "100"^^xsd:int .
 
-:InstanceDeMédecins rdf:type :Médecin ;
+:InstanceDeMédecins rdf:type ont:Médecin ;
           rdfs:label "Médecin" ;
-          :NombreDindividus "100"^^xsd:int .
+          ont:NombreDindividus "100"^^xsd:int .
 
-:InstanceDeMilitaires rdf:type :Militaire ;
+:InstanceDeMilitaires rdf:type ont:Militaire ;
           rdfs:label "Militaire" ;
-          :NombreDindividus "100"^^xsd:int .
+          ont:NombreDindividus "100"^^xsd:int .
 
-:InstanceDeInfirmiers rdf:type :Infirmier ;
+:InstanceDeInfirmiers rdf:type ont:Infirmier ;
           rdfs:label "Infirmier" ;
-          :NombreDindividus "100"^^xsd:int .
+          ont:NombreDindividus "100"^^xsd:int .
