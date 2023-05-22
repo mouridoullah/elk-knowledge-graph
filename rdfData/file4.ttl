@@ -76,8 +76,7 @@
 :Blesses rdf:type owl:Class ;
     rdfs:label "Blessés" ;
     rdfs:comment "Les blessés sont des victimes qui ont été blessées lors d'une catastrophe." ;
-    rdfs:subClassOf :Victimes ;
-    owl:DatatypeProperty .
+    rdfs:subClassOf :Victimes .
 
 :Disparus rdf:type owl:Class ;
     rdfs:label "Disparus" ;
