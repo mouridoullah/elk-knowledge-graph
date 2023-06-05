@@ -20,21 +20,29 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#constitue
 :constitue rdf:type owl:ObjectProperty ;
-           owl:inverseOf :estConstituéDe .
+           owl:inverseOf :estConstituéDe ;
+           rdfs:domain :Secouristes ;
+           rdfs:range :EquipeDeSecour .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#estConstituéDe
-:estConstituéDe rdf:type owl:ObjectProperty .
+:estConstituéDe rdf:type owl:ObjectProperty ;
+                rdfs:domain :EquipeDeSecour ;
+                rdfs:range :Secouristes .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeDeplacementDeSurvivants
 :operationDeDeplacementDeSurvivants rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf :operationDeSauvetage .
+                                    rdfs:subPropertyOf :operationDeSauvetage ;
+                                    rdfs:domain :DeplacerSurvivants ;
+                                    rdfs:range :Survivants .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeRecherche
 :operationDeRecherche rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :operationDeSauvetage .
+                      rdfs:subPropertyOf :operationDeSauvetage ;
+                      rdfs:domain :RechercheDeDisparus ;
+                      rdfs:range :Disparus .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeSauvetage
@@ -44,16 +52,22 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeSoins
 :operationDeSoins rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :operationDeSauvetage .
+                  rdfs:subPropertyOf :operationDeSauvetage ;
+                  rdfs:domain :PremiersSecours ;
+                  rdfs:range :Blessés .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDidentification
 :operationDidentification rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf :operationDeSauvetage .
+                          rdfs:subPropertyOf :operationDeSauvetage ;
+                          rdfs:domain :IdentifierEtTraiterLesMorts ;
+                          rdfs:range :Morts .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#participe
-:participe rdf:type owl:ObjectProperty .
+:participe rdf:type owl:ObjectProperty ;
+           rdfs:domain :EquipeDeSecour ;
+           rdfs:range :Sauvetage .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#sauve
