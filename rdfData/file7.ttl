@@ -81,23 +81,35 @@
 #################################################################
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#date
-:date rdf:type owl:DatatypeProperty .
+:date rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Catastrophe ,
+                  :Sauvetage ;
+      rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#lieu
-:lieu rdf:type owl:DatatypeProperty .
+:lieu rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Catastrophe ,
+                  :Sauvetage ;
+      rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nomCatastrophe
-:nomCatastrophe rdf:type owl:DatatypeProperty .
+:nomCatastrophe rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Catastrophe ;
+                rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nombreDeSecouristes
-:nombreDeSecouristes rdf:type owl:DatatypeProperty .
+:nombreDeSecouristes rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Secouristes ;
+                     rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nombreDeVictimes
-:nombreDeVictimes rdf:type owl:DatatypeProperty .
+:nombreDeVictimes rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Victimes ;
+                  rdfs:range xsd:int .
 
 
 #################################################################
