@@ -1,0 +1,293 @@
+@prefix : <http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6/> .
+
+<http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#affecte
+:affecte rdf:type owl:ObjectProperty ;
+         rdfs:domain :Catastrophe ;
+         rdfs:range :Victimes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#constitue
+:constitue rdf:type owl:ObjectProperty ;
+           owl:inverseOf :estConstituéDe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#estConstituéDe
+:estConstituéDe rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeDeplacementDeSurvivants
+:operationDeDeplacementDeSurvivants rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :operationDeSauvetage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeRecherche
+:operationDeRecherche rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :operationDeSauvetage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeSauvetage
+:operationDeSauvetage rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty :sauve .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDeSoins
+:operationDeSoins rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :operationDeSauvetage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#operationDidentification
+:operationDidentification rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :operationDeSauvetage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#participe
+:participe rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#sauve
+:sauve rdf:type owl:ObjectProperty ;
+       rdfs:domain :Sauvetage ;
+       rdfs:range :Victimes .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#date
+:date rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#lieu
+:lieu rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nomCatastrophe
+:nomCatastrophe rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nombreDeSecouristes
+:nombreDeSecouristes rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#nombreDeVictimes
+:nombreDeVictimes rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#AccidentDeTrain
+:AccidentDeTrain rdf:type owl:Class ;
+                 rdfs:subClassOf :CatastropheTechnologique .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#AccidentNucleaire
+:AccidentNucleaire rdf:type owl:Class ;
+                   rdfs:subClassOf :CatastropheTechnologique .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Blessés
+:Blessés rdf:type owl:Class ;
+         rdfs:subClassOf :Victimes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Catastrophe
+:Catastrophe rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :date ;
+                               owl:allValuesFrom xsd:dateTime
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :lieu ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :nomCatastrophe ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#CatastropheNaturelle
+:CatastropheNaturelle rdf:type owl:Class ;
+                      rdfs:subClassOf :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#CatastropheTechnologique
+:CatastropheTechnologique rdf:type owl:Class ;
+                          rdfs:subClassOf :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Cyclone
+:Cyclone rdf:type owl:Class ;
+         rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#DeplacerSurvivants
+:DeplacerSurvivants rdf:type owl:Class ;
+                    rdfs:subClassOf :Sauvetage ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :operationDeDeplacementDeSurvivants ;
+                                      owl:allValuesFrom :Survivants
+                                    ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Disparus
+:Disparus rdf:type owl:Class ;
+          rdfs:subClassOf :Victimes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#EquipeDeSecour
+:EquipeDeSecour rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :estConstituéDe ;
+                                  owl:allValuesFrom :Secouristes
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :participe ;
+                                  owl:allValuesFrom :Sauvetage
+                                ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Explosion
+:Explosion rdf:type owl:Class ;
+           rdfs:subClassOf :CatastropheTechnologique .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#GlissementDeTerrain
+:GlissementDeTerrain rdf:type owl:Class ;
+                     rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#IdentifierEtTraiterLesMorts
+:IdentifierEtTraiterLesMorts rdf:type owl:Class ;
+                             rdfs:subClassOf :Sauvetage ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :operationDidentification ;
+                                               owl:allValuesFrom :Morts
+                                             ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Infirmier
+:Infirmier rdf:type owl:Class ;
+           rdfs:subClassOf :Secouristes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Innondation
+:Innondation rdf:type owl:Class ;
+             rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Militaire
+:Militaire rdf:type owl:Class ;
+           rdfs:subClassOf :Secouristes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Morts
+:Morts rdf:type owl:Class ;
+       rdfs:subClassOf :Victimes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Médecin
+:Médecin rdf:type owl:Class ;
+         rdfs:subClassOf :Secouristes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Pompiers
+:Pompiers rdf:type owl:Class ;
+          rdfs:subClassOf :Secouristes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#PremiersSecours
+:PremiersSecours rdf:type owl:Class ;
+                 rdfs:subClassOf :Sauvetage ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :operationDeSoins ;
+                                   owl:allValuesFrom :Blessés
+                                 ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#RechercheDeDisparus
+:RechercheDeDisparus rdf:type owl:Class ;
+                     rdfs:subClassOf :Sauvetage ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :operationDeRecherche ;
+                                       owl:allValuesFrom :Disparus
+                                     ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Sauvetage
+:Sauvetage rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :participe ;
+                             owl:someValuesFrom :EquipeDeSecour
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :date ;
+                             owl:allValuesFrom xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :lieu ;
+                             owl:allValuesFrom xsd:string
+                           ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Secheresse
+:Secheresse rdf:type owl:Class ;
+            rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Secouristes
+:Secouristes rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :constitue ;
+                               owl:allValuesFrom :EquipeDeSecour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :nombreDeSecouristes ;
+                               owl:allValuesFrom xsd:int
+                             ] .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Survivants
+:Survivants rdf:type owl:Class ;
+            rdfs:subClassOf :Victimes .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Séisme
+:Séisme rdf:type owl:Class ;
+        rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Tempete
+:Tempete rdf:type owl:Class ;
+         rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Tsunami
+:Tsunami rdf:type owl:Class ;
+         rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-6#Victimes
+:Victimes rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :nombreDeVictimes ;
+                            owl:allValuesFrom xsd:int
+                          ] .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
