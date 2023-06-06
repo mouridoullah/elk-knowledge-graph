@@ -12,199 +12,166 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Causer
-:Causer rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf owl:topObjectProperty ;
-        rdfs:domain :Catastrophe ;
-        rdfs:range :Dommage .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/cause
+:cause rdf:type owl:ObjectProperty ;
+       owl:inverseOf :estCauséPar ;
+       rdfs:domain :Catastrophe ;
+       rdfs:range :Dommage .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Effectuer
-:Effectuer rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf owl:topObjectProperty ;
-           rdfs:domain :Secouriste ;
-           rdfs:range :Secours .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/effectue
+:effectue rdf:type owl:ObjectProperty ;
+          rdfs:domain :Secouriste ;
+          rdfs:range :Secours .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#EtreCauséPar
-:EtreCauséPar rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain :Dommage ;
-              rdfs:range :Catastrophe .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/estCauséPar
+:estCauséPar rdf:type owl:ObjectProperty ;
+             rdfs:domain :Dommage ;
+             rdfs:range :Catastrophe .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#EtreSecouruPar
-:EtreSecouruPar rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain :Dommage ;
-                rdfs:range :Secours .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/estSecouruPar
+:estSecouruPar rdf:type owl:ObjectProperty ;
+               owl:inverseOf :secourt ;
+               rdfs:domain :Dommage ;
+               rdfs:range :Secours .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Intervenir
-:Intervenir rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/intervient
+:intervient rdf:type owl:ObjectProperty ;
+            owl:inverseOf :necessite ;
             rdfs:domain :Secours ;
             rdfs:range :Catastrophe .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Necessiter
-:Necessiter rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :Catastrophe ;
-            rdfs:range :Secours .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/necessite
+:necessite rdf:type owl:ObjectProperty ;
+           rdfs:domain :Catastrophe ;
+           rdfs:range :Secours .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Secourir
-:Secourir rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf owl:topObjectProperty ;
-          rdfs:domain :Secours ;
-          rdfs:range :Dommage .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/secourt
+:secourt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Secours ;
+         rdfs:range :Dommage .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Blessé
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Blessé
 :Blessé rdf:type owl:Class ;
         rdfs:subClassOf :Dommage_Humain .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Catastrophe
-:Catastrophe rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :Causer ;
-                               owl:allValuesFrom :Dommage
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :Necessiter ;
-                               owl:allValuesFrom :Secours
-                             ] .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Catastrophe
+:Catastrophe rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Catastrophe_Naturelle
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Catastrophe_Naturelle
 :Catastrophe_Naturelle rdf:type owl:Class ;
                        rdfs:subClassOf :Catastrophe .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Catastrophe_Technologique
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Catastrophe_Technologique
 :Catastrophe_Technologique rdf:type owl:Class ;
                            rdfs:subClassOf :Catastrophe .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Degat_Batiment
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Degat_Batiment
 :Degat_Batiment rdf:type owl:Class ;
                 rdfs:subClassOf :Dommage_Materiel .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Degat_Infrastructure
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Degat_Infrastructure
 :Degat_Infrastructure rdf:type owl:Class ;
                       rdfs:subClassOf :Dommage_Materiel .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Disparu
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Disparu
 :Disparu rdf:type owl:Class ;
          rdfs:subClassOf :Dommage_Humain .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Dommage
-:Dommage rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :EtreCauséPar ;
-                           owl:allValuesFrom :Catastrophe
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :EtreSecouruPar ;
-                           owl:allValuesFrom :Secours
-                         ] .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Dommage
+:Dommage rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Dommage_Humain
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Dommage_Humain
 :Dommage_Humain rdf:type owl:Class ;
                 rdfs:subClassOf :Dommage .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Dommage_Materiel
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Dommage_Materiel
 :Dommage_Materiel rdf:type owl:Class ;
                   rdfs:subClassOf :Dommage .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Evacuation
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Evacuation
 :Evacuation rdf:type owl:Class ;
             rdfs:subClassOf :Secours_Materiel .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Medecin
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Medecin
 :Medecin rdf:type owl:Class ;
          rdfs:subClassOf :Secouriste .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Militaire
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Militaire
 :Militaire rdf:type owl:Class ;
            rdfs:subClassOf :Secouriste .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Mort
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Mort
 :Mort rdf:type owl:Class ;
       rdfs:subClassOf :Dommage_Humain .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Pompier
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Pompier
 :Pompier rdf:type owl:Class ;
          rdfs:subClassOf :Secouriste .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Recherche
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Recherche
 :Recherche rdf:type owl:Class ;
            rdfs:subClassOf :Secours_Humain .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Relogement
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Relogement
 :Relogement rdf:type owl:Class ;
             rdfs:subClassOf :Secours_Materiel .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Retablissement
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Retablissement
 :Retablissement rdf:type owl:Class ;
                 rdfs:subClassOf :Secours_Materiel .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Secouriste
-:Secouriste rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty :Effectuer ;
-                              owl:allValuesFrom :Secours
-                            ] .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Secouriste
+:Secouriste rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Secours
-:Secours rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :Intervenir ;
-                           owl:allValuesFrom :Catastrophe
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :Secourir ;
-                           owl:allValuesFrom :Dommage
-                         ] .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Secours
+:Secours rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Secours_Humain
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Secours_Humain
 :Secours_Humain rdf:type owl:Class ;
                 rdfs:subClassOf :Secours .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Secours_Materiel
-:Secours_Materiel rdf:type owl:Class ;
-                  rdfs:subClassOf :Secours .
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Secours_Materiel
+:Secours_Materiel rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Soin
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Soin
 :Soin rdf:type owl:Class ;
       rdfs:subClassOf :Secours_Humain .
 
 
-###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8#Traitement
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Traitement
 :Traitement rdf:type owl:Class ;
             rdfs:subClassOf :Secours_Humain .
 
