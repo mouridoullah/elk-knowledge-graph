@@ -27,7 +27,7 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/estCauséPar
 :estCauséPar rdf:type owl:ObjectProperty ;
-             rdfs:domain :Dommage ;
+             rdfs:domain :Dommage_Humain ;
              rdfs:range :Catastrophe .
 
 
@@ -54,7 +54,7 @@
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/secourt
 :secourt rdf:type owl:ObjectProperty ;
          rdfs:domain :Secours ;
-         rdfs:range :Dommage .
+         rdfs:range :Dommage_Humain .
 
 
 #################################################################
@@ -163,7 +163,8 @@
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Secours_Materiel
-:Secours_Materiel rdf:type owl:Class .
+:Secours_Materiel rdf:type owl:Class ;
+                  rdfs:subClassOf :Secours .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/Soin
