@@ -34,7 +34,7 @@
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-8/estSecouruPar
 :estSecouruPar rdf:type owl:ObjectProperty ;
                owl:inverseOf :secourt ;
-               rdfs:domain :Dommage ;
+               rdfs:domain :Dommage_Humain ;
                rdfs:range :Secours .
 
 
