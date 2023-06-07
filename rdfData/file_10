@@ -65,7 +65,20 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Blessé
 :Blessé rdf:type owl:Class ;
-        rdfs:subClassOf :DommageHumain .
+        rdfs:subClassOf :DommageHumain ,
+                        [ rdf:type owl:Class ;
+                          owl:unionOf ( [ rdf:type owl:Restriction ;
+                                          owl:onProperty :estSoignéPar ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :Medecin
+                                        ]
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :estSoignéPar ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :Pompier
+                                        ]
+                                      )
+                        ] .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Catastrophe
@@ -98,7 +111,12 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Disparu
 :Disparu rdf:type owl:Class ;
-         rdfs:subClassOf :DommageHumain .
+         rdfs:subClassOf :DommageHumain ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :estRecherchéPar ;
+                           owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Militaire
+                         ] .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Dommage
@@ -142,7 +160,20 @@
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Mort
 :Mort rdf:type owl:Class ;
-      rdfs:subClassOf :DommageHumain .
+      rdfs:subClassOf :DommageHumain ,
+                      [ rdf:type owl:Class ;
+                        owl:unionOf ( [ rdf:type owl:Restriction ;
+                                        owl:onProperty :estTraitéPar ;
+                                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Militaire
+                                      ]
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :estTraitéPar ;
+                                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Pompier
+                                      ]
+                                    )
+                      ] .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Ouvrier
