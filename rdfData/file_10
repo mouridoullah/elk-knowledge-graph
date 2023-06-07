@@ -18,11 +18,35 @@
        rdfs:range :Dommage .
 
 
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estRecherchéPar
+:estRecherchéPar rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :estSecouruPar ;
+                 rdfs:domain :Disparu ;
+                 rdfs:range :Militaire ,
+                            :Pompier .
+
+
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estSecouruPar
 :estSecouruPar rdf:type owl:ObjectProperty ;
                owl:inverseOf :secourt ;
                rdfs:domain :DommageHumain ;
                rdfs:range :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estSoignéPar
+:estSoignéPar rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :estSecouruPar ;
+              rdfs:domain :Blessé ;
+              rdfs:range :Medecin ,
+                         :Pompier .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estTraitéPar
+:estTraitéPar rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :estSecouruPar ;
+              rdfs:domain :Mort ;
+              rdfs:range :Militaire ,
+                         :Pompier .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#secourt
