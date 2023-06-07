@@ -26,6 +26,12 @@
                             :Pompier .
 
 
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estReconstruitPar
+:estReconstruitPar rdf:type owl:ObjectProperty ;
+                   rdfs:domain :DommageMateriel ;
+                   rdfs:range :Reconstructeur .
+
+
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#estSecouruPar
 :estSecouruPar rdf:type owl:ObjectProperty ;
                owl:inverseOf :secourt ;
@@ -80,6 +86,16 @@
                          rdfs:subClassOf :Catastrophe .
 
 
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#DegatBatiment
+:DegatBatiment rdf:type owl:Class ;
+               rdfs:subClassOf :DommageMateriel .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#DegatInfrastructure
+:DegatInfrastructure rdf:type owl:Class ;
+                     rdfs:subClassOf :DommageMateriel .
+
+
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Disparu
 :Disparu rdf:type owl:Class ;
          rdfs:subClassOf :DommageHumain .
@@ -104,6 +120,16 @@
                  rdfs:subClassOf :Dommage .
 
 
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Entrepreneur
+:Entrepreneur rdf:type owl:Class ;
+              rdfs:subClassOf :Reconstructeur .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Ingénieur
+:Ingénieur rdf:type owl:Class ;
+           rdfs:subClassOf :Reconstructeur .
+
+
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Medecin
 :Medecin rdf:type owl:Class ;
          rdfs:subClassOf :Secouriste .
@@ -119,9 +145,18 @@
       rdfs:subClassOf :DommageHumain .
 
 
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Ouvrier
+:Ouvrier rdf:type owl:Class ;
+         rdfs:subClassOf :Reconstructeur .
+
+
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Pompier
 :Pompier rdf:type owl:Class ;
          rdfs:subClassOf :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Reconstructeur
+:Reconstructeur rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Secouriste
