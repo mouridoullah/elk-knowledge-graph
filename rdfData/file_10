@@ -39,7 +39,11 @@
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#Catastrophe
-:Catastrophe rdf:type owl:Class .
+:Catastrophe rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :cause ;
+                               owl:allValuesFrom :Dommage
+                             ] .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#CatastropheNaturelle
@@ -64,7 +68,11 @@
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#DommageHumain
 :DommageHumain rdf:type owl:Class ;
                owl:equivalentClass :Victime ;
-               rdfs:subClassOf :Dommage .
+               rdfs:subClassOf :Dommage ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :estSecouruPar ;
+                                 owl:someValuesFrom :Secouriste
+                               ] .
 
 
 ###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-13#DommageMateriel
