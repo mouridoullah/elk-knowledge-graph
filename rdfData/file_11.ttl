@@ -1,0 +1,299 @@
+@prefix : <http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/> .
+
+<http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/cause
+:cause rdf:type owl:ObjectProperty ;
+       owl:inverseOf :estCauséPar ;
+       rdfs:domain :Catastrophe ;
+       rdfs:range :Dommage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/effectu
+:effectu rdf:type owl:ObjectProperty ;
+         owl:inverseOf :estEffectuéPar ;
+         rdfs:domain :Secouriste ;
+         rdfs:range :Secours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/estCauséPar
+:estCauséPar rdf:type owl:ObjectProperty ;
+             rdfs:domain :Dommage ;
+             rdfs:range :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/estEffectuéPar
+:estEffectuéPar rdf:type owl:ObjectProperty ;
+                rdfs:domain :Secours ;
+                rdfs:range :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/estSecouruPar
+:estSecouruPar rdf:type owl:ObjectProperty ;
+               owl:inverseOf :secourt ;
+               rdfs:domain :Dommage ;
+               rdfs:range :Secours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/intervient
+:intervient rdf:type owl:ObjectProperty ;
+            owl:inverseOf :nécessite ;
+            rdfs:domain :Secours ;
+            rdfs:range :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/nécessite
+:nécessite rdf:type owl:ObjectProperty ;
+           rdfs:domain :Catastrophe ;
+           rdfs:range :Secours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/secourt
+:secourt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Secours ;
+         rdfs:range :Dommage .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/AccidentChimique
+:AccidentChimique rdf:type owl:Class ;
+                  rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/AccidentDeTransport
+:AccidentDeTransport rdf:type owl:Class ;
+                     rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/AccidentNucléaire
+:AccidentNucléaire rdf:type owl:Class ;
+                   rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Ambulance
+:Ambulance rdf:type owl:Class ;
+           rdfs:subClassOf :EquipementDeSecours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Avalanche
+:Avalanche rdf:type owl:Class ;
+           rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Blessé
+:Blessé rdf:type owl:Class ;
+        rdfs:subClassOf :DommageHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Catastrophe
+:Catastrophe rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/CatastropheIndustrielle
+:CatastropheIndustrielle rdf:type owl:Class ;
+                         rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/CatastropheNaturelle
+:CatastropheNaturelle rdf:type owl:Class ;
+                      rdfs:subClassOf :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/CatastropheNonNaturelle
+:CatastropheNonNaturelle rdf:type owl:Class ;
+                         rdfs:subClassOf :Catastrophe .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/CentresMédicauxDUrgence
+:CentresMédicauxDUrgence rdf:type owl:Class ;
+                         rdfs:subClassOf :EquipementDeSecours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Cyberattaque
+:Cyberattaque rdf:type owl:Class ;
+              rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Disparu
+:Disparu rdf:type owl:Class ;
+         rdfs:subClassOf :DommageHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Dommage
+:Dommage rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/DommageHumain
+:DommageHumain rdf:type owl:Class ;
+               rdfs:subClassOf :Dommage .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/DommageNonHumain
+:DommageNonHumain rdf:type owl:Class ;
+                  rdfs:subClassOf :Dommage ;
+                  rdfs:comment "Dommages aux infrastructures" .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/DommagesAuxRéseauxDeServicesPublics
+:DommagesAuxRéseauxDeServicesPublics rdf:type owl:Class ;
+                                     rdfs:subClassOf :DommageNonHumain ;
+                                     rdfs:comment "Interruption de l'alimentation électrique, des systèmes de distribution d'eau, des réseaux de télécommunication, etc." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/DommagesAuxVoiesDeTransports
+:DommagesAuxVoiesDeTransports rdf:type owl:Class ;
+                              rdfs:subClassOf :DommageNonHumain ;
+                              rdfs:comment "Interruption des voies de communication, obstruction des routes, effondrement des ponts." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/EffondrementDesBâtiments
+:EffondrementDesBâtiments rdf:type owl:Class ;
+                          rdfs:subClassOf :DommageNonHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/EquipementDeSecours
+:EquipementDeSecours rdf:type owl:Class ;
+                     rdfs:subClassOf :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Explosion
+:Explosion rdf:type owl:Class ;
+           rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/FeuDeForêt
+:FeuDeForêt rdf:type owl:Class ;
+            rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/GlissementDeTerrain
+:GlissementDeTerrain rdf:type owl:Class ;
+                     rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Inondation
+:Inondation rdf:type owl:Class ;
+            rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Medecin
+:Medecin rdf:type owl:Class ;
+         rdfs:subClassOf :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Militaire
+:Militaire rdf:type owl:Class ;
+           rdfs:subClassOf :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Mort
+:Mort rdf:type owl:Class ;
+      rdfs:subClassOf :DommageHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Ouragan
+:Ouragan rdf:type owl:Class ;
+         rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Pompier
+:Pompier rdf:type owl:Class ;
+         rdfs:subClassOf :Secouriste .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Recherche
+:Recherche rdf:type owl:Class ;
+           rdfs:subClassOf :SecoursHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/RéparationDesInfrastructures
+:RéparationDesInfrastructures rdf:type owl:Class ;
+                              rdfs:subClassOf :SecoursNonHumain ;
+                              rdfs:comment "Les infrastructures telles que les bâtiments, les routes, les ponts, les systèmes de transport en commun, etc., doivent être évaluées et réparées. Cela peut impliquer des travaux de construction, de réhabilitation ou de reconstruction selon l'étendue des dommages." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/RétablissementDesServices
+:RétablissementDesServices rdf:type owl:Class ;
+                           rdfs:subClassOf :SecoursNonHumain ;
+                           rdfs:comment "Les services publics essentiels tels que l'alimentation en eau, l'électricité, le gaz et les télécommunications doivent être rétablis rapidement. Cela peut nécessiter la réparation des lignes électriques, des conduites d'eau, des réseaux de communication, etc." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Secouriste
+:Secouriste rdf:type owl:Class ;
+            rdfs:comment "Les \"secouristes\", quant à eux, sont des personnes formées pour fournir une assistance et des soins de premiers secours aux personnes en détresse. Ils sont souvent membres d'organisations spécialisées telles que les services d'urgence médicale, les pompiers, la Croix-Rouge ou d'autres organisations de secours. Les secouristes sont formés pour évaluer les situations d'urgence, administrer les premiers soins, prodiguer des gestes de réanimation cardiorespiratoire (RCR), immobiliser des blessures, gérer les traumatismes et aider les victimes jusqu'à l'arrivée des professionnels de la santé." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Secours
+:Secours rdf:type owl:Class ;
+         rdfs:comment "En effet, le terme \"secours\" peut être considéré comme un ensemble d'actions, de mesures et de services visant à fournir une assistance et une aide aux personnes en situation de détresse, de danger ou de besoin. Cet ensemble comprend différentes interventions et ressources destinées à protéger, aider et soutenir les individus dans des situations d'urgence ou de crise." .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/SecoursHumain
+:SecoursHumain rdf:type owl:Class ;
+               rdfs:subClassOf :Secours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/SecoursNonHumain
+:SecoursNonHumain rdf:type owl:Class ;
+                  rdfs:subClassOf :Secours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Soins
+:Soins rdf:type owl:Class ;
+       rdfs:subClassOf :SecoursHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Sécheresse
+:Sécheresse rdf:type owl:Class ;
+            rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/TempêteDeNeige
+:TempêteDeNeige rdf:type owl:Class ;
+                rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Terrorisme
+:Terrorisme rdf:type owl:Class ;
+            rdfs:subClassOf :CatastropheNonNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/Tornade
+:Tornade rdf:type owl:Class ;
+         rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/TraitementDesMorts
+:TraitementDesMorts rdf:type owl:Class ;
+                    rdfs:subClassOf :SecoursHumain .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/TremblementDeTerre
+:TremblementDeTerre rdf:type owl:Class ;
+                    rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/VéhiculeDeRecherche
+:VéhiculeDeRecherche rdf:type owl:Class ;
+                     rdfs:subClassOf :EquipementDeSecours .
+
+
+###  http://www.semanticweb.org/mandiaye/ontologies/2023/5/untitled-ontology-17/ÉruptionVolcanique
+:ÉruptionVolcanique rdf:type owl:Class ;
+                    rdfs:subClassOf :CatastropheNaturelle .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
