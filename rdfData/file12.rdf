@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mandiaye/ontologies/2023/7/untitled-ontology-87/"
+     xml:base="http://www.semanticweb.org/mandiaye/ontologies/2023/7/untitled-ontology-87/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cco="http://www.ontologyrepository.com/CommonCoreOntologies/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:ExtendedRelationOntology="http://www.ontologylibrary.mil/CommonCore/Upper/ExtendedRelationOntology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/master/AllCoreOntology.ttl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_day -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_day">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_month -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_month">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_status -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_status">
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_year -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_year">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000008"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/installed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/installed_by">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000029"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/respond_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/respond_to">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/take_place_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/take_place_in">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EnvironmentalFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Artifact -->
+
+    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_status"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/OrganizationMember -->
+
+    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/OrganizationMember">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/agent_in"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/OrganizationMemberRole -->
+
+    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/OrganizationMemberRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Accident -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Accident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Act"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/respond_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_secours_réel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_secours_réel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_simulé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_simulé -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_simulé">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Attaque_terroriste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Attaque_terroriste">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/occurs_at"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/GeospatialRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/occurs_on"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/take_place_in"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/EnvironmentalFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_climatologique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_climatologique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_géophysique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_géophysique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_hydrologique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_hydrologique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_météorologique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_météorologique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_Naturelle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Date -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Date">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000038"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_day"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Day"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_month"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/CalendarMonth"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/has_year"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/GregorianYear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponible -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponible">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Engagé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Engagé -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Engagé">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Explosion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Explosion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Incendie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Incendie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Opération_coordonnée -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Opération_coordonnée">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_secours_réel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_simulé"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Rôle_de_commandement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Rôle_de_commandement">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Rôle_opérationnel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Rôle_opérationnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Rôle_opérationnel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_d&apos;origine_Humaine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000145"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Amount"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/BiologicalSex"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Closure"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Density"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Disability"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Ethnicity"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/EyeColor"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/FinancialValue"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/HairColor"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Hardness"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Mass"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Radioactive"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ShapeQuality"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SizeQuality"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SkinType"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Temperature"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Texture"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Weight"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Wetness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Disponibilité"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000144"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000182"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Act"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Change"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/MechanicalProcess"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/NaturalProcess"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Stasis"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Behavior"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/BiographicalLife"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+            <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/UnintentionalAct"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Acte_de_réponse"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Accident"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Attaque_terroriste"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Explosion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Incendie"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_climatologique"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_géophysique"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_hydrologique"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mandiaye/ontologies/2023/7/CatastropheV2/Catastrophe_météorologique"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
